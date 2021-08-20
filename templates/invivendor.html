@@ -1,0 +1,251 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<head>
+    <script>
+
+$(document).ready(function()
+
+    {
+	var x = 0; //Initial field counter
+	var list_maxField = 10; //Input fields increment limitation
+
+        //Once add button is clicked
+	$('.list_add_button').click(function()
+	    {
+	    //Check maximum number of input fields
+	    if(x < list_maxField){
+	        x++; //Increment field counter
+	        var list_fieldHTML = '<br/><div class="row"><div class="col-xs-3 col-sm-3 col-md-3"><div class="form-group"><input name="list['+x+'][]" type="text" placeholder="Enter Card Type" class="form-control"/></div></div><div class="col-xs-4 col-sm-4 col-md-4"><div class="form-group"><input type="file" name=name="list['+x+'][]" class="choose"></div></div><div class="col-xs-3 col-sm-3 col-md-3"><div class="form-group"><input name="list['+x+'][]" type="text" placeholder="Enter starting price" class="form-control"/></div></div><div class="col-xs-1 col-sm-7 col-md-1"><a href="javascript:void(0);" class="list_remove_button btn btn-danger">-</a></div></div>'; //New input field html
+	        $('.list_wrapper').append(list_fieldHTML); //Add field html
+	    }
+        });
+
+        //Once remove button is clicked
+        $('.list_wrapper').on('click', '.list_remove_button', function()
+        {
+           $(this).closest('div.row').remove(); //Remove field html
+           x--; //Decrement field counter
+        });
+});
+    </script>
+    <style>
+    .centered-form{
+    margin-top: 100px;
+    width:70rem;
+}
+
+.centered-form .panel{
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.3) 10px 10px 10px;
+}
+    .signup-form
+ {
+
+ width: 90%;
+  overflow: hidden;
+  }
+  .input-group
+{
+width:20rem;
+padding-left:15px;
+}
+ }
+.venu{
+   font-size:30px;
+   font-family:  "Rubik", sans-serif;
+}
+.input-group
+{
+padding-left:10px;
+}
+.name {
+  font-size: 14px;
+  color: #333;
+  padding-top: 15px;
+}
+.choose::-webkit-file-upload-button {
+  color: white;
+  display: inline-block;
+  background: #d9534f;
+  border: none;
+  padding: 7px 15px;
+  font-weight: 700;
+  border-radius: 3px;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 10pt;
+
+}
+
+.main{
+  /* The image used */
+  background-image: url( "{% static 'images/b7.jpg' %}");
+  background-color: #cccccc;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  }
+  .form-title
+{ font-size:40px;
+color:black;
+  font-family:  "Rubik", sans-serif;
+
+  }
+.centered-form {
+    margin-top: 2px;
+    width: 70rem;
+}
+.panel-heading
+{
+padding-bottom:5px;
+}
+</style>
+</head>
+<body>
+
+
+
+
+<div class="main">
+    <section class="signup" id="top">
+        <div class="container" style="border:3px solid #d9534f;">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h1 class="form-title">Fill the Invitation details</h1>
+                    <form method="POST" class="rform" id="rform" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="hidden" name="status"  value=0>
+                        <input type="hidden" name="customerid"  value={{user.id}}>
+                        <input type="hidden" name="vendortype"  value=invitation>
+                        <input type="hidden" name="status"  value=0>
+                        <div class="form-group">
+
+                            <label> <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+                            </label>
+                            <span class="venu" style="font-size:18px;">Name:</span>
+                            <input type="text" name="name" id="venue" placeholder="Enter your shop name">
+
+
+                        </div>
+
+                        <div class="form-group">
+                            <span class="ven" style="font-size:18px;">Address of the shop:</span> <label><path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z"></path>
+                            <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z"></path>
+                        </label><input type="text" name="address" id="venue2" placeholder="Enter your address">
+
+                        </div>
+
+                        <div class="form-group">
+                            <span class="ven" style="font-size:18px;">Contact number:</span> <label><path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z"></path>
+                            <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z"></path>
+                        </label><input type="text" name="number" id="venue4" placeholder="Enter your number">
+
+                        </div>
+                        <div class="form-group">
+
+                            <span class="ven" style="font-size:18px;">Invitation card type</span><br/><br/>
+
+                            <div class="row">
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <div class="custom-control custom-checkbox custom-control-inline">
+                                        <input type="checkbox" name="ctype[]" value="boxed" class="custom-control-input" id="defaultInline1">
+                                        <label class="custom-control-label"  for="defaultInline1">Boxed</label>
+                                    </div><br/></div>
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <label><input type="file" name="boxed"  class="choose"></label></div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z"></path>
+                                    <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z"></path>
+                                    <input type="text" name="bprice" id="invi" placeholder="Enter starting price eg:Rs.200-1200">
+                                    <br/></div></div>
+                            <div class="row ">
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <div class="custom-control custom-checkbox custom-control-inline">
+                                        <input type="checkbox" name="ctype[]" value="unboxed" class="custom-control-input" id="defaultInline2">
+                                        <label class="custom-control-label" for="defaultInline2">Unboxed</label>
+                                    </div><br/></div>
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <label>
+                                        <input type="file"  name="uboxed" class="choose"></label></div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z"></path>
+                                    <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z"></path>
+                                    <input type="text" name="unprice" id="invi1" placeholder="Enter starting price eg:Rs.200-1200">
+                                    <br/></div></div>
+                            <div class="row ">
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <div class="custom-control custom-checkbox custom-control-inline">
+                                        <input type="checkbox" name="ctype[]" value="Scroll" class="custom-control-input" id="defaultInline3">
+                                        <label class="custom-control-label" for="defaultInline2">Scroll</label>
+                                    </div><br/></div>
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+
+                                    <label><input type="file" name="scroll" class="choose"></label></div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z"></path>
+                                    <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z"></path>
+                                    <input type="text" name="sprice" id="invi3" placeholder="Enter starting price eg:Rs.200-1200">
+                                    <br/></div></div>
+
+                        </div>
+                        <div class="panel-heading text-left">
+
+                            <span class="ven" style="font-size:18px;">Add other Cards</span>
+                        </div>
+                        <div class="col-xs-3 col-sm-3 col-md-3">
+                            <div class="form-group">
+                                Card Type
+                                <input name="otherc" type="text" placeholder="Enter Card type " class="form-control"/>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-3 col-sm-3 col-md-3">
+                            <div class="form-group ">
+                                Upload Samples
+                                <input type="file" name="otheri" class="choose">
+
+                            </div>
+                        </div>
+                        <div class="col-xs-3 col-sm-3 col-md-3">
+                            <div class="form-group">
+                                Price
+                                <input name="othprice" type="text" placeholder="Enter starting price" class="form-control"/>
+                            </div>
+                        </div>
+                        <!------container---->
+
+
+                        <!---end cont--->
+
+
+                        <div class="form-group">
+                            <span class="ven">About your shop:</span><label for="exampleFormControlTextarea1"></label>
+                            <textarea class="form-control" name="about" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <span class="ven">Upload your file</span>
+                            <input type="file" name="image" class="choose">
+
+                        </div>
+                        <div class="form-group form-button">
+                            <input type="submit" name="signup" id="signup" class="form-submit" value="Submit"/>
+                        </div>
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Sign up form <span class="border border-danger">-->
+
+{% endblock %}
+</body>
+</html>

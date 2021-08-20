@@ -1,0 +1,87 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery/Fontawesome Rating Plugin</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.11/css/all.css" integrity="sha384-p2jx59pefphTFIpeqCcISO9MdVfIm4pNnsL08A6v5vaQc4owkQqxMV8kg4Yvhaw/" crossorigin="anonymous">
+
+    <!-- CSS -->
+
+     <style>
+
+.product__list__item--icons {
+  display: inline-block;
+  float: left;
+  padding-top: 5px;
+}
+
+.product__list__item--icons a {
+  color: var(--middle-grey);
+}
+
+.product__list__item--icons a:hover {
+  color: var(--dark-grey);
+}
+
+
+/* Added the two below */
+
+.product__list__item--icons .selected {
+  color: var(--light-pink);
+}
+
+.product__list__item--icons .selected:hover {
+  color: var(--pink);
+}
+
+#heart--liked {
+  /*display: none; REMOVED */
+  transition: .2s;
+}
+
+#addtocart {
+  margin-left: 10px;
+}
+</style>
+</head>
+<body>
+
+ <div class="product__list__item--icons">
+          <span id="heart"><a href=" "><i id="heart--liked" class="far fa-heart fa-2x"></i></a></span>
+          <span id="addtocart"><a href=" "><i class="fas fa-cart-plus fa-2x"></i></a></span>
+        </div>
+
+
+
+
+
+  <script>
+ $(document).ready(function() {
+
+  // Specific code for the heart fill toggle
+  $("#heart--liked").click(function(e) {
+    $(this).toggleClass("far").toggleClass("fas"); // Toggle the filling !
+  });
+
+  // Action when click on a link (color)
+  $(".product__list__item--icons a").click(function(e) {
+    e.preventDefault(); // Modified: stop link # from loading (Why using link then?)
+    $(this).toggleClass("selected"); // Toggle the colored class !
+  });
+
+});
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>

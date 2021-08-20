@@ -1,0 +1,285 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+
+    <script src="{% static 'js/side/jquery.min.js' %}"></script>
+    <script src="{% static 'js/side/popper.js' %}"></script>
+    <script src="{% static 'js/side/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/side/main.js' %}"></script>
+
+
+    <style>
+    .ven{
+   font-size:22px;
+   color:black;
+   font-family:"Brush Script MT, Brush Script Std, cursive";
+   padding-bottom:5px;
+}
+.card-header
+{
+font-size:30px;
+text-align:center;
+font-family:"Brush Script MT, Brush Script Std, cursive";
+}
+  #sidebar {
+  min-width: 300px;
+  max-width: 300px;
+  background: #566573;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+  #sidebar.active {
+    margin-left: -300px; }
+  #sidebar .logo {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto; }
+    #sidebar .logo span {
+      display: block; }
+  #sidebar ul.components {
+    padding: 0; }
+  #sidebar ul li {
+    font-size: 16px; }
+    #sidebar ul li > ul {
+      margin-left: 10px; }
+      #sidebar ul li > ul li {
+        font-size: 14px; }
+    #sidebar ul li a {
+      padding: 10px 0;
+      display: block;
+      color: rgba(255, 255, 255, 0.8);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+      #sidebar ul li a:hover {
+        color: #f8b739; }
+    #sidebar ul li.active > a {
+      background: transparent;
+      color: #f8b739; }
+  @media (max-width: 991.98px) {
+    #sidebar {
+      margin-left: -300px; }
+      #sidebar.active {
+        margin-left: 0; } }
+.par
+{
+ margin-left:105px;
+ }
+
+.card {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+}
+
+.pari{
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+}
+
+
+
+
+</style>
+    <script>
+        $(.list-unstyled.components.mb-5 > li').on('click', function (e) {
+e.preventDefault();
+$('.nav.navbar-nav > li').removeClass('active');
+$(this).addClass('active');
+    </script>
+</head>
+
+<body>
+
+<div class="wrapper d-flex align-items-stretch side">
+
+    <nav id="sidebar"  >
+        <div class=" p-4 pt-5">
+            <ul class="list-unstyled components mb-5">
+                <li >
+                    <a href="wishlist" aria-expanded="false">Wishlist</a>
+                </li>
+
+                <li>
+                    <a href="booking" data-toggle="collapse" aria-expanded="false" >Booking</a>
+                </li>
+
+
+
+
+
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Content  -->
+    {%for i in result%}
+    <div class="card">
+
+        <div class="card-header ven"><strong>
+            QUOTATION REQUEST</strong>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+            <div class="ven">First Name:{{i.fname}}</div>
+            <div class="ven">lname:{{i.lname}}</div>
+            <div class="ven">Name:{{i.email}}</div>
+            <div class="ven">Dates:{{i.fdate}}-{{i.ldate}}</div>
+            <div class="ven">Phone number:{{i.mob}}</div>
+            <div class="ven">Amenities:{{i.ame}}</div>
+            <div class="ven">Guest::{{i.guest}}</div>
+            <div class="ven">Rooms:{{i.rooms}}</div>
+            </p>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Send Response
+            </button><button href="#" class="btn  par btn-primary">Cancel</button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <form method="POST" class="rform" id="rform" >
+                            {% csrf_token %}
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Response</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+
+                                <input type="hidden" name="vendori"  value={{user.id}}>
+                                <input type="hidden" name="cusid"  value={{i.customeri}}>
+
+                                <div class="form-group">
+                                    <label> <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+                                    </label>
+                                    <span class="ven">Enter the amount:</span> <input type="text" name="amt" id="venue" placeholder="Enter your amount">
+
+
+                                </div>
+                                 <div class="form-group">
+                            <span class="ven">Comments:</span><label for="exampleFormControlTextarea1"></label>
+                            <textarea class="form-control" name="comment" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <input type="submit" name="signup" id="signup" class="form-submit" value="Send"/>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>0
+
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{%endfor%}
+<!-----end quotation request to vendor---->
+    {% if user.is_superuser%}
+    {%for i in result3%}
+    <div class="card">
+
+        <div class="card-header ven"><strong>
+            QUOTATION REQUEST</strong>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+            <div class="ven">First Name:{{i.fname}}</div>
+            <div class="ven">lname:{{i.lname}}</div>
+            <div class="ven">Name:{{i.email}}</div>
+            <div class="ven">Dates:{{i.fdate}}-{{i.ldate}}</div>
+            <div class="ven">Phone number:{{i.mob}}</div>
+            </p>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Send Response
+            </button><button href="#" class="btn  par btn-primary">Cancel</button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <form method="POST" class="rform" id="rform" >
+                            {% csrf_token %}
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Response</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+
+                                <input type="hidden" name="vendori"  value={{user.id}}>
+                                <input type="hidden" name="cusid"  value={{i.customeri}}>
+
+                                <div class="form-group">
+                                    <label> <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+                                    </label>
+                                    <span class="ven">Enter the amount:</span> <input type="text" name="amt" id="venue" placeholder="Enter your amount">
+
+
+                                </div>
+                                 <div class="form-group">
+                            <span class="ven">Comments:</span><label for="exampleFormControlTextarea1"></label>
+                            <textarea class="form-control" name="comment" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <input type="submit" name="signup" id="signup" class="form-submit" value="Send"/>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>0
+
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{%endfor%}
+    {%endif%}
+<!------start res to customer---->
+{%for i in result2%}
+<div class="pari">
+    <div class="card" style="margin-left:50px;">
+        <div class="card-header ven"><strong>
+             QUOTATION RESPONSE</strong>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+            <div class="ven">Amount:{{i.amt}}</div>
+            <div class="ven">Comment:{{i.comment}}</div>
+            </p>
+            <form action="{% url 'wishlist' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" value="{{i.vendori}}" name="pid">
+                            <input type="hidden" value="{{i.amt}}" name="amt">
+                            <button type="submit" class="btn btn-success btn-block">
+                                <i class="fa fa-shopping-cart"></i>
+                                Book vendor
+                            </button>
+                        </form>
+            <button href="#" class="btn  par btn-primary">Cancel</button>
+
+            <!-- Modal -->
+
+    </div>
+        </div>
+</div>{%endfor%}
+
+</div>
+{% endblock %}
+</body>

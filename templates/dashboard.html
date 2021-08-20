@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+
+    <script src="{% static 'js/side/jquery.min.js' %}"></script>
+    <script src="{% static 'js/side/popper.js' %}"></script>
+    <script src="{% static 'js/side/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/side/main.js' %}"></script>
+
+
+    <style>
+  #sidebar {
+  min-width: 300px;
+  max-width: 300px;
+  background: #566573;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+  #sidebar.active {
+    margin-left: -300px; }
+  #sidebar .logo {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto; }
+    #sidebar .logo span {
+      display: block; }
+  #sidebar ul.components {
+    padding: 0; }
+  #sidebar ul li {
+    font-size: 16px; }
+    #sidebar ul li > ul {
+      margin-left: 10px; }
+      #sidebar ul li > ul li {
+        font-size: 14px; }
+    #sidebar ul li a {
+      padding: 10px 0;
+      display: block;
+      color: rgba(255, 255, 255, 0.8);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+      #sidebar ul li a:hover {
+        color: #f8b739; }
+    #sidebar ul li.active > a {
+      background: transparent;
+      color: #f8b739; }
+  @media (max-width: 991.98px) {
+    #sidebar {
+      margin-left: -300px; }
+      #sidebar.active {
+        margin-left: 0; } }
+
+
+
+
+
+
+
+</style>
+    <script>
+        $(.list-unstyled.components.mb-5 > li').on('click', function (e) {
+e.preventDefault();
+$('.nav.navbar-nav > li').removeClass('active');
+$(this).addClass('active');
+    </script>
+</head>
+
+<body>
+
+<div class="wrapper d-flex align-items-stretch side">
+
+    <nav id="sidebar"  >
+        <div class=" p-4 pt-5">
+            <ul class="list-unstyled components mb-5">
+                <li >
+                    <a href="wishlist" aria-expanded="false">Wishlist</a>
+                </li>
+
+                <li>
+                    <a href="booking"  aria-expanded="false" >Booking</a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu"  aria-expanded="false" >Finalize</a>
+                </li>
+
+
+
+
+</ul>
+        </div>
+    </nav>
+
+    <!-- Page Content  -->
+
+
+<!-----page over-->
+    </div>
+</div>
+
+{% endblock %}
+</body>

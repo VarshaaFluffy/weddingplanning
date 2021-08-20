@@ -1,0 +1,1110 @@
+{% load static %}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS only-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="{% static 'css/venu.css' %}">-->
+    <!--  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+       <link rel="stylesheet" href="{% static 'css/login.css' %}">
+      <link rel="stylesheet" href="{% static 'css/log/main.css' %}">
+        <link rel="stylesheet" href="{% static 'css/log/global.css' %}">
+       <link rel="stylesheet" href="{% static 'css/log/responsive.css' %}">
+       <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">-->
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gijgo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slicknav.css' %}">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+    <!--font-->
+    <link rel="stylesheet" href="{% static 'fonts/material-design-iconic-font.min.css' %}">
+    <!-- JS, Popper.js, and jQuery
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <!--<script src="{% static 'vendor/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/main.js' %}"></script>
+    <script src="{% static 'js/choices.js' %}"></script>-->
+
+
+    <style>
+    .tx-15{
+    font-size:15px;
+    }
+  .butu{
+   width: 200px;
+}
+.btn-group {
+ padding-left:120px;
+  padding-right:70px;
+  }
+.bt{
+padding-left:120px;
+
+
+  }
+  pad{
+  margin-left:60px;
+  padding-left:120px;
+  }
+
+    .navbar-nav > li{
+  padding-left:20px;
+  padding-right:20px;
+}
+.fas
+{
+color:#EA4335;
+}
+
+
+
+  h6
+  {
+  color:white;
+  font-family:  "Playfair Display";
+  font-size: 70px;
+  }
+
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .nav-link{ color: #fff;  }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+	}
+div.dropdown-multicol2{
+  width: 40em;
+}
+div.dropdown-multicol2>div.dropdown-col{
+  display:inline-block;
+  width: 42%;
+}
+.bar
+{ font-family:"Brush Script MT, Brush Script Std, cursive";
+ font-color="white";
+ }
+
+.name {
+  font-size: 14px;
+  color: #333;
+  padding-top: 15px;
+}
+.nav-link{
+font-size: 18px;
+  font-size: 1rem;
+line-height: 1.5;
+font-family: "Rubik", sans-serif;
+font-weight: normal;
+font-style: normal;
+list-style: none;
+box-sizing: border-box;
+text-decoration: none;
+background-color: transparent;
+transition: 0.3s;
+outline: medium none;
+display: block;
+padding: .5rem 1rem;
+padding-right: .5rem;
+padding-left: .5rem;
+}
+.hovereffect {
+width:650%;
+height:650%;
+float:left;
+overflow:hidden;
+position:relative;
+text-align:center;
+cursor:default;
+}
+
+.hovereffect .overlay {
+width:650%;
+height:650%;
+position:absolute;
+overflow:hidden;
+top:0;
+left:0;
+opacity:0;
+background-color:rgba(0,0,0,0.5);
+-webkit-transition:all .4s ease-in-out;
+transition:all .4s ease-in-out
+}
+
+
+
+.hovereffect img {
+display:block;
+position:relative;
+-webkit-transition:all .4s linear;
+transition:all .4s linear;
+}
+
+
+
+
+.hovereffect:hover img {
+-ms-transform:scale(1.2);
+-webkit-transform:scale(1.2);
+transform:scale(1.2);
+}
+.form-submit{
+font-size:20px;
+}
+.container{
+    margin-top:90px;
+}
+.fill
+{
+margin-top:20px;
+padding-left:50px;
+
+}
+
+.filter-col{
+    padding-left:20px;
+    padding-right:20px;
+}
+.form-group{
+ margin-left:20px;
+ }
+.dropdown.dropdown-lg .dropdown-menu {
+    margin-top: -1px;
+    padding: 4px 15px;
+}
+
+.btn-group .btn {
+    border-radius: 0;
+    margin-left: -1px;
+}
+.form-horizontal .form-group {
+    margin-left: 0;
+    margin-right: 0;
+}
+.button{
+ width: 100px;
+ }
+
+@media screen and (min-width: 768px) {
+    #boot-search-box {
+        width: 500px;
+        margin: 0 auto;
+    }
+    .dropdown.dropdown-lg {
+        position: static !important;
+    }
+    .dropdown.dropdown-lg .dropdown-menu {
+        min-width: 500px;
+    }
+}
+label{
+    font-weight: 600;
+}
+.custom-control{
+    font-weight: normal;
+}
+.dropdown-toggle{
+    padding-left: 10px;
+    border-radius: 0px !important;
+}
+.dropdown.dropdown-lg .dropdown-menu {
+    padding: 15px;
+}
+.input-group .form-control{
+    width: 50%;
+    border-radius: 0.25rem !important;
+}
+.dropdown.dropdown-lg .dropdown-menu{
+    min-width: 320px;
+}
+.dropdown-menu{
+    box-shadow: 1px 4px 8px -1px #c1c1c1;
+}
+@mixin BoxShadowHelper($level: 1){
+  @if $level == 1 {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+  }
+  @if $level == 2 {
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+  }
+}
+
+
+
+
+div [class^="col-"]{
+  padding-left:5px;
+  padding-right:5px;
+}
+.card{
+  transition:0.5s;
+  cursor:pointer;
+
+
+}
+.card-title{
+  font-size:15px;
+  transition:1s;
+  cursor:pointer;
+}
+.card-title i{
+  font-size:15px;
+  transition:1s;
+  cursor:pointer;
+  color:#ffa710
+}
+.card-title i:hover{
+  transform: scale(1.25) rotate(100deg);
+  color:#18d4ca;
+
+}
+.card:hover{
+  transform: scale(1.05);
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+}
+.card-text{
+  height:80px;
+}
+
+.card::before, .card::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scale3d(0, 0, 1);
+  transition: transform .3s ease-out 0s;
+  background: rgba(255, 255, 255, 0.1);
+  content: '';
+  pointer-events: none;
+}
+.card::before {
+  transform-origin: left top;
+}
+.card::after {
+  transform-origin: right bottom;
+}
+.card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
+  transform: scale3d(1, 1, 1);
+}
+.card-body{
+height:120px;
+}
+.checked {
+  color: orange;
+}
+.row
+{
+margin-left:5px;
+}
+.card-deck{
+padding-bottom: 30px;
+margin-top:30px;
+}
+
+.adj
+{
+margin-top:50px;
+margin-left:500px;
+}
+.btn-sm {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 13px 30px;
+    font-family: "Rubik", sans-serif;
+}
+.btn-radius {
+    border-radius: 100px !important;
+}
+.btn-danger{
+    background: #e81216;
+    background: -moz-linear-gradient(-45deg, #e81216 0%, #f45355 50%, #f6290c 51%, #ed0e11 71%, #fc1b21 100%);
+    background: -webkit-linear-gradient(-45deg, #e81216 0%,#f45355 50%,#f6290c 51%,#ed0e11 71%,#fc1b21 100%);
+    background: linear-gradient(135deg, #e81216 0%,#f45355 50%,#f6290c 51%,#ed0e11 71%,#fc1b21 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e81216', endColorstr='#fc1b21',GradientType=1 );
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 3s ease infinite;
+    -moz-animation: AnimationName 3s ease infinite;
+    animation: AnimationName 3s ease infinite;
+    -webkit-animation: AnimationName 3s ease infinite;
+    -moz-animation: AnimationName 3s ease infinite;
+    animation: AnimationName 3s ease infinite;
+    border: medium none;
+}
+@-webkit-keyframes AnimationName {
+    0%{
+        background-position:0% 31%
+    }
+    50%{
+        background-position:100% 70%
+    }
+    100%{
+        background-position:0% 31%
+    }
+}
+@-moz-keyframes AnimationName {
+    0%{
+        background-position:0% 31%
+    }
+    50%{
+        background-position:100% 70%
+    }
+    100%{
+        background-position:0% 31%
+    }
+}
+@keyframes AnimationName {
+    0%{
+        background-position:0% 31%
+    }
+    50%{
+        background-position:100% 70%
+    }
+    100%{
+        background-position:0% 31%
+    }
+}
+
+
+.footer-bs {
+    background-color: #d9534f;
+	padding: 20px 20px;
+	color: rgba(255,255,255,1.00);
+	margin-bottom: 1px;
+	border-bottom-right-radius: 3px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 3px;
+}
+
+.footer-brand{
+   display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 15px; }
+.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
+.footer-bs .footer-brand h2
+{
+ margin:0px 0px 5px;
+ font-family: "Rubik", sans-serif;
+ color:"white";
+   align-content: center;
+ }
+
+.footer-bs .footer-brand p {
+ font-size:13px;
+  color:rgba(255,255,255,0.70);
+   font-family: "Rubik", sans-serif;
+     text-align: center;
+   }
+
+.footer-bs .footer-nav ul.pages { list-style:none; padding:0px; }
+
+.footer-bs .footer-nav ul.pages li { padding:5px 0px;}
+
+.footer-bs .footer-nav ul.pages a
+ { color:rgba(255,255,255,1.00);
+ font-family: "Rubik", sans-serif;font-size:
+  13px; font-weight:bold;
+   text-transform:uppercase;
+     align-content: center;
+  }
+
+.footer-bs .footer-nav ul.pages a:hover { color:rgba(255,255,255,0.80);
+ text-decoration:none; }
+
+.footer-bs .footer-nav h4 {
+font-family: "Rubik", sans-serif;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin-bottom:1px;
+}
+
+.footer-bs .footer-nav ul.list { list-style:none; padding:0px; }
+
+.footer-bs .footer-nav ul.list li { padding:5px 0px;  align-content: center;}
+
+.footer-bs .footer-nav ul.list a { color:rgba(255,255,255,0.80);font-family: "Rubik", sans-serif;font-size: 13px;  align-content: center; }
+
+.footer-bs .footer-nav ul.list a:hover { color:rgba(255,255,255,0.60); text-decoration:none; }
+
+.footer-bs .footer-social ul { list-style:none; padding:0px; }
+
+.footer-bs .footer-social h4 {
+font-family: "Rubik", sans-serif;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	  align-content: center;
+}
+
+.footer-bs .footer-social li { padding:5px 4px;}
+
+.footer-bs .footer-social a { color:rgba(255,255,255,1.00);}
+
+.footer-bs .footer-social a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+
+.footer-bs .footer-ns h4 {
+    font-family: "Rubik", sans-serif;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin-bottom:1px;
+}
+
+.footer-bs .footer-ns p {
+font-family: "Rubik", sans-serif;font-size:12px; color:rgba(255,255,255,0.70); }
+
+@media (min-width: 768px) {
+	.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-left:solid 1px rgba(255,255,255,0.10); }
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+<!-------------------------------menu bar---------------->
+<nav class="navbar navbar-expand-sm bg-danger navbar-dark">
+    <!-- Brand/logo-->
+    <a class="navbar-brand" href="#" >
+        <img src="{% static 'images/venue/new1.png' %}" width="200" height="100" alt="logo">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="home">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown"> Vendors  </a>
+                <div class="dropdown-menu dropdown-multicol2" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-col">
+                       <a class="dropdown-item" href="invitation">Wedding Invitations</a>
+                        <a class="dropdown-item" href="pandit">Wedding Pandit</a>
+                        <a class="dropdown-item" href="venue">Wedding Venue</a>
+                        <a class="dropdown-item" href="decorators">Wedding Decorators</a>
+                    </div>
+                    <div class="dropdown-col">
+                        <a class="dropdown-item" href="catering">Wedding Catering services</a>
+                        <a class="dropdown-item" href="photography">Wedding Photography</a>
+                        <a class="dropdown-item" href="makeup">Wedding Make up</a>
+                        <a class="dropdown-item" href="band">Wedding Band</a>
+                        <div class="dropdown-menu dropdown-multicol2" aria-labelledby="dropdownMenuButton">
+                            <div class="dropdown-col">
+                                <a class="dropdown-item" href="djchoreo">Wedding DJ & Choreo</a>
+                            </div>
+                    </div>
+                </div>
+                </div>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">Add Vendor  </a>
+                <div class="dropdown-menu dropdown-multicol2" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-col">
+                        <a class="dropdown-item" href="invivendor"> Invitations</a>
+                        <a class="dropdown-item" href="panditvendor"> Pandit</a>
+                        <a class="dropdown-item" href="venuevendor"> Venue</a>
+                        <a class="dropdown-item" href="decorvendor"> Decorators</a>
+                    </div>
+                    <div class="dropdown-col">
+                        <a class="dropdown-item" href="cateringvendor"> Catering services</a>
+                        <a class="dropdown-item" href="photovendor"> Photography</a>
+                        <a class="dropdown-item" href="makeupvendor"> Make up</a>
+                        <a class="dropdown-item" href="djvendor"> Band</a>
+                        <div class="dropdown-menu dropdown-multicol2" aria-labelledby="dropdownMenuButton">
+                            <div class="dropdown-col">
+                                <a class="dropdown-item" href="musicdjvendor">DJ & Choreo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <button type="button" onclick="window.location.href='package'" class="btn btn-danger btn-sm btn-radius">Package</button>
+            </li>
+        </ul>
+    </div>
+
+
+    <ul class="navbar-nav justify-content-end">
+
+        <li class="nav-item">
+            {% if user.is_authenticated %}
+            <li class="nav-item dropdown">
+                <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown"> {{ user.username }} </a>
+                <div class="dropdown-menu dropdown-multicol2" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-col">
+                        <a class="dropdown-item" href="dashboard">Dashboard</a>
+                        <a class="dropdown-item" href="logout">logout</a>
+
+                    </div>
+            {% else %}
+            <a class="nav-link" href="index">Login/Register</a>
+            {% endif %}
+                </div>
+        </li>
+
+    </ul>
+</nav>
+<!-------------------------------menu bar---------------->
+<!--
+<div class="adj">
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalPoll-1">Get Quotation</button>
+
+    <div class="modal fade right" id="modalPoll-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true" data-backdrop="false">
+        <div class="modal-dialog modal-full-height modal-right modal-notify modal-info" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header bg-danger">
+                    <p class="heading lead">Get quotation
+                    </p>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">×</span>
+                    </button>
+                </div>
+
+
+                <div class="modal-body">
+
+                    <form>
+                        <div class="text-center">
+                            <div class="form-group">
+                                <label for="category" class="text-dark">Type</label>
+                                <select class="form-control" id="category">
+                                    <option>Banquet halls</option>
+                                    <option>Resorts</option>
+                                    <option>Hotels</option>
+                                    <option>Farmhouse</option>
+                                    <option>Small function halls</option>
+                                </select>
+                            </div>
+                        </div>
+                        <hr>
+
+
+
+
+                        <p class="text-center">
+                            <strong>Your rating</strong>
+                        </p>
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" name="group1" type="radio" id="radio-179" value="option1" checked>
+                            <label class="form-check-label" for="radio-179">Very good</label>
+                        </div>
+
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" name="group1" type="radio" id="radio-279" value="option2">
+                            <label class="form-check-label" for="radio-279">Good</label>
+                        </div>
+
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" name="group1" type="radio" id="radio-379" value="option3">
+                            <label class="form-check-label" for="radio-379">Mediocre</label>
+                        </div>
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" name="group1" type="radio" id="radio-479" value="option4">
+                            <label class="form-check-label" for="radio-479">Bad</label>
+                        </div>
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" name="group1" type="radio" id="radio-579" value="option5">
+                            <label class="form-check-label" for="radio-579">Very bad</label>
+                        </div>
+
+
+                        <p class="text-center">
+                            <strong>What could we improve?</strong>
+                        </p>
+
+                        <div class="md-form">
+                            <textarea type="text" id="form79textarea" class="md-textarea form-control" rows="3"></textarea>
+                            <label for="form79textarea">Your message</label>
+                        </div>
+
+                </div>
+
+
+                <div class="modal-footer justify-content-center">
+                    <a type="button" class="btn btn-primary waves-effect waves-light">Send
+                        <i class="fa fa-paper-plane ml-1"></i>
+                    </a>
+                    <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>--><!--end-->
+<div class="col-md-12 fill">
+    <div class="border-bottom pd-b-30 mg-t-40 bg-white w-40 mw-40">
+        <div class="row mg-t-30 mg-l-20 mg-r-20">
+            <div class="col-md-2 pad">
+                <label class="text-uppercase tx-14 tx-bold tx-gray-700 w-120 bt">I'm Looking For</label>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-outline-danger butu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Wedding Band</button>
+                    <button type="button" class="btn bg-danger dropdown-toggle dropdown-toggle-split " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle</span>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnDropdownDemo">
+                        <a class="dropdown-item" href="venue">Wedding Venue</a>
+                        <a class="dropdown-item" href="invitation">Wedding Invitation</a>
+                        <a class="dropdown-item" href="pandit">Wedding Pandit</a>
+                        <a class="dropdown-item" href="photography">Wedding Photography</a>
+                        <a class="dropdown-item" href="catering">Wedding Catering services</a>
+                        <a class="dropdown-item" href="makeup">Wedding Decorators</a>
+                        <a class="dropdown-item" href="band">Wedding Makeup</a>
+                        <a class="dropdown-item" href="djchoreo">Wedding DJ and Choreo</a>
+                    </div>
+                </div>
+                <!-- ngRepeat: cat in allCat --><!-- ngIf: cat.cat_slug!=main.cat_slug -->
+            </div>
+            <div class="col-md-2 pad">
+                <label class="text-uppercase tx-14 tx-bold tx-gray-700 w-120 bt">Band type</label>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-outline-danger butu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Choose</button>
+                    <button type="button" class="btn bg-danger dropdown-toggle dropdown-toggle-split " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle</span>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnDropdownDemo">
+                        <a class="dropdown-item" href="#">Nathaswaram</a>
+                        <a class="dropdown-item" href="#">Chanda melam</a>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <label class="text-uppercase tx-14 tx-bold tx-gray-700 w-100 bt">In</label>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-outline-danger butu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cities</button>
+                    <button type="button" class="btn bg-danger dropdown-toggle dropdown-toggle-split " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle</span>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnDropdownDemo">
+                        <a class="dropdown-item" href="#">Erode</a>
+                        <a class="dropdown-item" href="#">Salem</a>
+                        <a class="dropdown-item" href="#">Chennai</a>
+                        <a class="dropdown-item" href="#">Coimbatore</a>
+                        <a class="dropdown-item" href="#">Madurai</a>
+                        <a class="dropdown-item" href="#">Trichy</a>
+                        <a class="dropdown-item" href="#">Vellore</a>
+                        <a class="dropdown-item" href="#">Tuticorin</a>
+                        <a class="dropdown-item" href="#">Thirunelveli</a>
+                        <a class="dropdown-item" href="#">Tanjore</a>
+                        <a class="dropdown-item" href="#">Tirupur</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label class="text-uppercase tx-14 tx-bold tx-gray-700 w-100 bt">Search By Name</label>
+                <div class="btn-group">
+                    <input type="text" placeholder="Search By Name" id="searchvendors" autocomplete="off" class="form-control w-75 ht-35 float-left btn-outline-danger">
+                    <button type="button" onclick="searchbyname();" class="w-25 ht-35 float-left border bg-primary">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--------------------------search op----------->
+<!--
+<div class="col align-self-end">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3 col-sm-8 offset-sm-2 col-12">
+                <div class="input-group" id="adv-search">
+                    <input type="text" class="form-control form-control-search" placeholder="Search for filters" />
+                    <div class="input-group-btn">
+                        <div class="btn-group" role="group">
+                            <div class="dropdown dropdown-lg">
+                                <button type="button" class="btn btn-lg btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="category" class="text-dark">Type</label>
+                                            <select class="form-control" id="category">
+                                                <option>Banquet halls</option>
+                                                <option>Resorts</option>
+                                                <option>Hotels</option>
+                                                <option>Farmhouse</option>
+                                                <option>Small function halls</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="category" class="text-dark">Space preference</label>
+                                            <select class="form-control" id="category2">
+                                                <option>Indoor</option>
+                                                <option>Outdoor</option>
+                                                <option>Indoor and outdoor</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>No of guests</label><br>
+                                            <label class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input">
+                                                <span class="custom-control-indicator"></span>
+                                                <span class="custom-control-description"><100</span>
+                                            </label>
+                                            <label class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input">
+                                                <span class="custom-control-indicator"></span>
+                                                <span class="custom-control-description">100-300</span>
+                                            </label>
+                                            <label class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input">
+                                                <span class="custom-control-indicator"></span>
+                                                <span class="custom-control-description"><500</span>
+                                            </label>
+                                            <label class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input">
+                                                <span class="custom-control-indicator"></span>
+                                                <span class="custom-control-description">500-1000</span>
+                                            </label>
+                                            <label class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input">
+                                                <span class="custom-control-indicator"></span>
+                                                <span class="custom-control-description">>5000</span>
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Ratings</label><br>
+                                            <label class="custom-control custom-radio">
+                                                <input id="radio1" name="radio" type="radio" class="custom-control-input">
+                                                <span class="custom-control-indicator"></span>
+                                                <span class="custom-control-description">All ratings</span>
+                                            </label>
+                                            <label class="custom-control custom-radio">
+                                                <input id="radio2" name="radio" type="radio" class="custom-control-input">
+                                                <span class="custom-control-indicator"></span>
+                                                <span class="custom-control-description">Rated <4</span>
+                                            </label>
+                                            <label class="custom-control custom-radio">
+                                                <input id="radio3" name="radio" type="radio" class="custom-control-input">
+                                                <span class="custom-control-indicator"></span>
+                                                <span class="custom-control-description">Rated 4+</span>
+                                            </label>
+                                        </div>
+                                        <hr>
+                                        <div class="form-group text-center">
+                                            <button type="submit" class="btn btn-primary">Search</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary"><span class="fa fa-search" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!-----------search-------->
+<!-------start of cards----->
+<div class="container">
+    <h3 class="tx-20 text-danger tx-bold tx-gray-700 tx-capitalize border-bottom ng-binding">Wedding Band --></h3>
+    <h5 class="tx-15">Showing <b class="text-danger">100</b>Bands in Tamil Nadu</h5>
+    <div class="card-deck">
+        <div class="card">
+            <!-- set a width on the image otherwise it will expand to full width       -->
+            <a href="ravimahal"><img class="card-img-top" src="{% static 'images/band/naths/n1.jpg' %}" width="100" height="150"  alt=""></a>
+            <div class="card-body">
+                <h4 class="card-title">
+                    <a href="ravimahal" target="_blank">Nathaswaram Vidhvan</a>
+                </h4>
+                <h5><i style='font-size:24px' class='fas'>&#xf3c5;</i>Chennai</h5>
+                <p class="card-text">Price on request</p>
+            </div>
+            <div class="card-footer">
+
+
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            </div>
+        </div>
+        <!-- /.card -->
+
+        <div class="card">
+            <!-- set a width on the image otherwise it will expand to full width       -->
+            <a href="ravimahal"><img class="card-img-top" src="{% static 'images/band/chenda/c1.jpg' %}" width="100" height="150"  alt=""></a>
+            <div class="card-body">
+                <h4 class="card-title">
+                    <a href="ravimahal" target="_blank">Sai Chenda Melam</a>
+                </h4>
+                <h5><i style='font-size:24px' class='fas'>&#xf3c5;</i>Salem</h5>
+                <p class="card-text">Price on request</p>
+            </div>
+            <div class="card-footer">
+
+
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            </div>
+        </div>
+        <!-- /.card -->
+
+        <div class="card">
+            <!-- set a width on the image otherwise it will expand to full width       -->
+            <a href="ravimahal"><img class="card-img-top" src="{% static 'images/band/covai/c1.jpg' %}" width="100" height="150"  alt=""></a>
+            <div class="card-body">
+                <h4 class="card-title">
+                    <a href="ravimahal" target="_blank">Covai Nandha Group </a>
+                </h4>
+                <h5><i style='font-size:24px' class='fas'>&#xf3c5;</i>Coimbatore</h5>
+                <p class="card-text">Price on request</p>
+            </div>
+            <div class="card-footer">
+
+
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            </div>
+        </div>
+        <!-- /.card -->
+        <div class="card">
+            <a href="ravimahal"><img class="card-img-top" src="{% static 'images/band/j/j1.jpg' %}" width="100" height="150"  alt=""></a>
+            <div class="card-body">
+                <h4 class="card-title">
+                    <a href="ravimahal" target="_blank">J Events</a>
+                </h4>
+                <h5><i style='font-size:24px' class='fas'>&#xf3c5;</i>Madurai</h5>
+                <p class="card-text">Price on request</p>
+            </div>
+            <div class="card-footer">
+
+
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            </div>
+        </div>
+        <!-- /.card -->
+
+
+    </div>
+    <!-- /.card-deck -->
+
+
+
+    <!-- /.row -->
+    <div class="row">
+        <div class="card-deck">
+            {%for i in result%}
+            <div class="col-sm-6 col-md-3">
+
+                <div class="card">
+
+                    <!-- set a width on the image otherwise it will expand to full width       -->
+                    <a href="wedband/{{i.id}}"><img class="card-img-top" src="/media/{{i.image}}" width="100" height="150"  alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="wedband/{{i.id}}" target="_blank">{{i.name}}</a>
+                        </h4>
+                        <h5><i style='font-size:24px' class='fas'>&#xf3c5;</i>{{i.address}}</h5>
+                        <p class="card-text">Price on Request</p>
+                    </div>
+                    <div class="card-footer">
+
+
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                    </div>
+
+                    <!-- /.card -->
+
+                </div>
+
+            </div>
+            {%endfor%}
+
+
+            <!-- /.col-sm-4 -->
+            <div class="col-sm-6 col-md-3">
+
+                <div class="card">
+                    <!-- set a width on the image otherwise it will expand to full width       -->
+                    <a href="#"><img class="card-img-top" src="{% static 'images/venue/royal/r1.jpg' %}" width="100" height="150"  alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#" target="_blank">The Royal Palms</a>
+                        </h4>
+                        <h5><i style='font-size:24px' class='fas'>&#xf3c5;</i> Chennai</h5>
+                        <p class="card-text">Price on Request</p>
+                    </div>
+                    <div class="card-footer">
+
+
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                    </div>
+                </div>
+                <!-- /.card -->
+
+
+            </div>
+
+            <!-- /.col-sm-4 -->
+            <div class="col-sm-6 col-md-3">
+
+                <div class="card">
+                    <!-- set a width on the image otherwise it will expand to full width       -->
+                    <a href="#"><img class="card-img-top" src="{% static 'images/venue/raintree/rt1.jpg' %}" width="100" height="150"  alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#" target="_blank">The Rain Tree Hotel</a>
+                        </h4>
+                        <h5><i style='font-size:24px' class='fas'>&#xf3c5;</i> Chennai</h5>
+                        <p class="card-text">Price on Request</p>
+                    </div>
+                    <div class="card-footer">
+
+
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-sm-4 -->
+            <div class="col-sm-6 col-md-3">
+
+                <div class="card">
+                    <!-- set a width on the image otherwise it will expand to full width       -->
+                    <a href="#"><img class="card-img-top" src="{% static 'images/venue/rajesh/rj1.jpg' %}" width="100" height="150"  alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#" target="_blank">EVP Rajeswari Marriage Palace</a>
+                        </h4>
+                        <h5><i style='font-size:24px' class='fas'>&#xf3c5;</i> Chennai</h5>
+                        <p class="card-text">Price on Request</p>
+                    </div>
+                    <div class="card-footer">
+
+
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked "></span>
+                        <span class="fa fa-star "></span>
+                    </div>
+                </div>
+                <!-- /.card -->
+
+            </div>
+
+            <!-- /.col-sm-4 -->
+        </div>
+
+    </div>
+
+
+</div>
+<!-- /.container -->
+
+
+
+<!----------- Footer ------------>
+<footer class="footer-bs">
+    <div class="row">
+        <div class="col-md-4 footer-brand animated fadeInLeft">
+            <a class="footer-brand" href="home" >
+                <img src="{% static 'images/venue/new1.png' %}" width="200" height="100" alt="logo">
+            </a>
+            <p>We are a full-service wedding and event planning company dedicated to once-in-a-lifetime celebrations. Let I Do… make your vision a reality. </p>
+            <p>© 2020 Copyright | Three Knots | All rights reserved</p>
+        </div>
+        <div class="col-md-2 footer-nav animated fadeInUp">
+            <h4>Vendors</h4>
+            <div class="col-md-3">
+                <ul class="pages">
+                    <li><a href="venue">Venue</a></li>
+                    <li><a href="#">Invitation</a></li>
+                    <li><a href="#">Pandit</a></li>
+                    <li><a href="#">Decorators</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <ul class="pages">
+                    <li><a href="#">Photography</a></li>
+                    <li><a href="#">Invitation</a></li>
+                    <li><a href="#">Band</a></li>
+                    <li><a href="#">Make_Up</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3 footer-nav animated fadeInUp">
+            <div class="col-md-3">
+                <ul class="list">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Terms & Condition</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-2 footer-social animated fadeInDown">
+            <h4>Follow Us</h4>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Google</a></li>
+            </ul>
+        </div>
+
+    </div>
+</footer>
+
+{% block content%}
+{% endblock %}
+</body>
+</html>
+

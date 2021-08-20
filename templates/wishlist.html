@@ -1,0 +1,255 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+
+    <script src="{% static 'js/side/jquery.min.js' %}"></script>
+    <script src="{% static 'js/side/popper.js' %}"></script>
+    <script src="{% static 'js/side/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/side/main.js' %}"></script>
+    <style>
+  #sidebar {
+  min-width: 300px;
+  max-width: 300px;
+  background: #566573;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+  #sidebar.active {
+    margin-left: -300px; }
+  #sidebar .logo {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto; }
+    #sidebar .logo span {
+      display: block; }
+  #sidebar ul.components {
+    padding: 0; }
+  #sidebar ul li {
+    font-size: 16px; }
+    #sidebar ul li > ul {
+      margin-left: 10px; }
+      #sidebar ul li > ul li {
+        font-size: 14px; }
+    #sidebar ul li a {
+      padding: 10px 0;
+      display: block;
+      color: rgba(255, 255, 255, 0.8);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+      #sidebar ul li a:hover {
+        color: #f8b739; }
+    #sidebar ul li.active > a {
+      background: transparent;
+      color: #f8b739; }
+  @media (max-width: 991.98px) {
+    #sidebar {
+      margin-left: -300px; }
+      #sidebar.active {
+        margin-left: 0; } }
+
+  .card-title{
+  font-size:15px;
+  transition:1s;
+  cursor:pointer;
+}
+.card-title i{
+  font-size:15px;
+  transition:1s;
+  cursor:pointer;
+  color:#ffa710
+}
+.card-title i:hover{
+  transform: scale(1.25) rotate(100deg);
+  color:#18d4ca;
+
+}
+.card:hover{
+  transform: scale(1.05);
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+}
+.card-text{
+  height:80px;
+}
+
+.card::before, .card::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scale3d(0, 0, 1);
+  transition: transform .3s ease-out 0s;
+  background: rgba(255, 255, 255, 0.1);
+  content: '';
+  pointer-events: none;
+}
+.card::before {
+  transform-origin: left top;
+}
+.card::after {
+  transform-origin: right bottom;
+}
+.card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
+  transform: scale3d(1, 1, 1);
+}
+.card-body{
+height:120px;
+}
+
+.pari
+{
+ margin-right:10px;
+ margin-top:50px;
+ }
+
+</style>
+    <script>
+        $('.list-unstyled.components.mb-5 > li').on('click', function (e) {
+e.preventDefault();
+$('.list-unstyled.components.mb-5 > li').removeClass('active');
+$(this).addClass('active');
+    </script>
+</head>
+
+<body>
+
+<div class="wrapper d-flex align-items-stretch side">
+
+    <nav id="sidebar"  >
+        <div class=" p-4 pt-5">
+            <ul class="list-unstyled components mb-5">
+                <li>
+                    <a href="wishlist" data-toggle="collapse" aria-expanded="false">Wishlist</a>
+                </li>
+
+                <li>
+                    <a href="booking" aria-expanded="false" >Booking</a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu"  aria-expanded="false" >Finalize</a>
+                </li>
+
+
+
+
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<!-- Page Content  -->
+
+Hey there,
+{% if user.is_authenticated %}
+<h1>{{user.username}}</h1>
+{% else %}
+<h1>unknown</h1>
+{% endif %}
+{% if items|length == 0 %}
+<div class="container-fluid">
+    <div class="jumbotron alert alert-danger">
+        &times; Your Shopping Cart is empty !!!
+    </div>
+</div>
+{% else %}
+<div class="container-fluid" >
+    <div class="row" style="background:rgba(0,0,0,0.5)">
+        <div class="col-md-2 text-light text-center font-weight-bold text-uppercase">
+            {% if status %}
+            <h1>{{status}}</h1>
+            {% else %}
+            <h1>My Wishlist ({{items|length}})</h1>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% if user.is_authenticated %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-9 my-5" >
+            <div style="box-shadow:0px 0px 10px gray;">
+                {% if msz %}
+                <div class="{{cls}} mt-3">{{msz}}</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+
+        <div class="card-deck">
+            {% for i in items %}
+ <div class="row">
+            <div class="col-sm-6 col-md-3">
+
+                <div class="card">
+                    <div class="bg-image hover-overlay ripple" data-ripple-color="light">
+                        <img
+                                src="/media/{{i.vendort.image}}"
+                                class="img-fluid"
+                        />
+                        <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{i.vendort.name}}</h5>
+                        <p class="card-text">
+                            {{i.vendort.address}}
+                        </p>
+                        <form action="{% url 'booking' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" value="{{i.vendort.id}}" name="pid">
+                            <input type="hidden" value="{{i.amt}}" name="amt">
+                            <button type="submit" class="btn btn-success btn-block">
+                                <i class="fa fa-shopping-cart"></i>
+                                Place Order
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+              </div>
+        {%endfor%}<br><br>
+
+</div>
+
+
+
+
+
+
+
+
+{% else %}
+<br>
+<div class="card-deck">
+    <div class="col-md-14">
+        <div class="card">
+            <div class="middle">
+                <div class="label1">Your Wishlist is empty...!</div>
+            </div>
+            <div class="bottom">
+                <div class="label4"><a href="/">Go to Shop</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
+
+
+{% endif %}
+
+
+
+
+
+
+{% endblock %}
+</body>

@@ -1,0 +1,1657 @@
+
+
+{% load static %}
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.11/css/all.css" integrity="sha384-p2jx59pefphTFIpeqCcISO9MdVfIm4pNnsL08A6v5vaQc4owkQqxMV8kg4Yvhaw/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/log/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/log/global.css' %}">
+    <link rel="stylesheet" href="{% static 'css/log/responsive.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gijgo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slicknav.css' %}">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+    <!--font-->
+    <link rel="stylesheet" href="{% static 'fonts/material-design-iconic-font.min.css' %}">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <!-- <script src="{% static 'vendor/jquery.min.js' %}"></script>
+     <script src="{% static 'vendor/main.js' %}"></script>
+     <script id="rendered-js" src="{% static 'coro.js' %}"></script>-->
+    <script>
+        function validate1(val) {
+v1 = document.getElementById("fname");
+v2 = document.getElementById("lname");
+v3 = document.getElementById("email");
+v4 = document.getElementById("mob");
+
+flag1 = true;
+flag2 = true;
+flag3 = true;
+flag4 = true;
+
+if(val>=1 || val==0) {
+if(v1.value == "") {
+v1.style.borderColor = "red";
+flag1 = false;
+}
+else {
+v1.style.borderColor = "green";
+flag1 = true;
+}
+}
+
+if(val>=2 || val==0) {
+if(v2.value == "") {
+v2.style.borderColor = "red";
+flag2 = false;
+}
+else {
+v2.style.borderColor = "green";
+flag2 = true;
+}
+}
+
+if(val>=3 || val==0) {
+if(v3.value == "") {
+v3.style.borderColor = "red";
+flag3 = false;
+}
+else {
+v3.style.borderColor = "green";
+flag3 = true;
+}
+}
+
+if(val>=4 || val==0) {
+if(v4.value == "") {
+v4.style.borderColor = "red";
+flag4 = false;
+}
+else {
+v4.style.borderColor = "green";
+flag4 = true;
+}
+}
+
+flag = flag1 && flag2 && flag3 && flag4;
+
+return flag;
+}
+
+
+function validate2(val) {
+v1 = document.getElementById("defaultInline12");
+v2 = document.getElementById("guest");
+v3 = document.getElementById("rooms");
+
+
+
+flag1 = true;
+flag2= true;
+flag3 = true;
+
+if(val>=1 || val==0) {
+if(v1.value == "") {
+v1.style.borderColor = "red";
+flag1 = false;
+}
+else {
+v1.style.borderColor = "green";
+flag1 = true;
+}
+}
+
+if(val>=2 || val==0) {
+if(v2.value == "") {
+v2.style.borderColor = "red";
+flag2 = false;
+}
+else {
+v2.style.borderColor = "green";
+flag2 = true;
+}
+}
+
+if(val>=3 || val==0) {
+if(v3.value == "") {
+v3.style.borderColor = "red";
+flag3 = false;
+}
+else {
+v3.style.borderColor = "green";
+flag3 = true;
+}
+}
+
+
+flag = flag1 && flag2 && flag3 ;
+
+return flag;
+}
+
+$(document).ready(function(){
+
+var current_fs, next_fs, previous_fs;
+
+$(".next").click(function(){
+
+
+current_fs = $(this).parent().parent();
+next_fs = $(this).parent().parent().next();
+
+$(current_fs).removeClass("show");
+$(next_fs).addClass("show");
+
+$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+current_fs.animate({}, {
+step: function() {
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+
+next_fs.css({
+'display': 'block'
+});
+}
+});
+}
+});
+
+$(".prev").click(function(){
+
+current_fs = $(this).parent().parent();
+previous_fs = $(this).parent().parent().prev();
+
+$(current_fs).removeClass("show");
+$(previous_fs).addClass("show");
+
+$("#progressbar li").eq($("fieldset").index(next_fs)).removeClass("active");
+
+current_fs.animate({}, {
+step: function() {
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+
+previous_fs.css({
+'display': 'block'
+});
+}
+});
+});
+
+$('.radio-group .radio').click(function(){
+$(this).toggleClass('selected');
+});
+
+});
+    </script>
+    <script>
+
+        //initial setup
+        document.addEventListener('DOMContentLoaded', function(){
+            let stars = document.querySelectorAll('.star');
+            stars.forEach(function(star){
+                star.addEventListener('click', setRating);
+            });
+
+            let rating = parseInt(document.querySelector('.stars').getAttribute('data-rating'));
+            let target = stars[rating - 1];
+            target.dispatchEvent(new MouseEvent('click'));
+        });
+
+        function setRating(ev){
+            let span = ev.currentTarget;
+            let stars = document.querySelectorAll('.star');
+            let match = false;
+            let num = 0;
+            stars.forEach(function(star, index){
+                if(match){
+                    star.classList.remove('rated');
+                }else{
+                    star.classList.add('rated');
+                }
+                //are we currently looking at the span that was clicked
+                if(star === span){
+                    match = true;
+                    num = index + 1;
+                }
+            });
+            document.querySelector('.stars').setAttribute('data-rating', num);
+        }
+
+
+
+</script>
+    <script>
+   $('#myCarousel').carousel({
+  interval: false
+});
+$('#carousel-thumbs').carousel({
+  interval: false
+});
+
+// handles the carousel thumbnails
+// https://stackoverflow.com/questions/25752187/bootstrap-carousel-with-thumbnails-multiple-carousel
+$('[id^=carousel-selector-]').click(function() {
+  var id_selector = $(this).attr('id');
+  var id = parseInt( id_selector.substr(id_selector.lastIndexOf('-') + 1) );
+  $('#myCarousel').carousel(id);
+});
+// Only display 3 items in nav on mobile.
+if ($(window).width() < 575) {
+  $('#carousel-thumbs .row div:nth-child(4)').each(function() {
+    var rowBoundary = $(this);
+    $('<div class="row mx-0">').insertAfter(rowBoundary.parent()).append(rowBoundary.nextAll().addBack());
+  });
+  $('#carousel-thumbs .carousel-item .row:nth-child(even)').each(function() {
+    var boundary = $(this);
+    $('<div class="carousel-item">').insertAfter(boundary.parent()).append(boundary.nextAll().addBack());
+  });
+}
+// Hide slide arrows if too few items.
+if ($('#carousel-thumbs .carousel-item').length < 2) {
+  $('#carousel-thumbs [class^=carousel-control-]').remove();
+  $('.machine-carousel-container #carousel-thumbs').css('padding','0 5px');
+}
+// when the carousel slides, auto update
+$('#myCarousel').on('slide.bs.carousel', function(e) {
+  var id = parseInt( $(e.relatedTarget).attr('data-slide-number') );
+  $('[id^=carousel-selector-]').removeClass('selected');
+  $('[id=carousel-selector-'+id+']').addClass('selected');
+});
+// when user swipes, go next or previous
+$('#myCarousel').swipe({
+  fallbackToMouseEvents: true,
+  swipeLeft: function(e) {
+    $('#myCarousel').carousel('next');
+  },
+  swipeRight: function(e) {
+    $('#myCarousel').carousel('prev');
+  },
+  allowPageScroll: 'vertical',
+  preventDefaultEvents: false,
+  threshold: 75
+});
+/*
+$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+  event.preventDefault();
+  $(this).ekkoLightbox();
+});
+*/
+
+$('#myCarousel .carousel-item img').on('click', function(e) {
+  var src = $(e.target).attr('data-remote');
+  if (src) $(this).ekkoLightbox();
+});
+</script>
+    <!-- <script>
+          $(document).ready(function(){
+      $("#heart").click(function(){
+          var attr_id = $(this).attr('attr_id')
+          var action_url = $(this).attr('action_url')
+          var that = $(this)
+
+          $.ajax({
+              url: action_url,
+              type: "POST",
+              data: {'attr_id': attr_id },
+              headers: { "X-CSRFToken": $.cookie("csrftoken") },
+              success: function (result) {
+                  console.log("Success")
+                  that.toggleClass("far").toggleClass("fas"); ;
+              },
+              error: function () {
+                  alert("Please login");
+              }
+
+          });
+      });
+       $(".product__list__item--icons a").click(function(e) {
+      e.preventDefault(); // Modified: stop link # from loading (Why using link then?)
+      $(this).toggleClass("selected"); // Toggle the colored class !
+    });
+  });
+      </script>-->
+    <script>
+ $(document).ready(function() {
+
+  // Specific code for the heart fill toggle
+  $("#heart--liked").click(function(e) {
+
+    $(this).toggleClass("far").toggleClass("fas"); // Toggle the filling !
+  });
+
+  // Action when click on a link (color)
+  $(".product__list__item--icons a").click(function(e) {
+    e.preventDefault(); // Modified: stop link # from loading (Why using link then?)
+    $(this).toggleClass("selected"); // Toggle the colored class !
+  });
+
+});
+  </script>
+    <style>
+.product__list__item--icons {
+  display: inline-block;
+  float: left;
+  padding-top: 5px;
+}
+
+.product__list__item--icons a {
+  color: var(--middle-grey);
+}
+
+.product__list__item--icons a:hover {
+  color: var(--dark-grey);
+}
+
+
+/* Added the two below */
+
+.product__list__item--icons .selected {
+  color: var(--light-pink);
+}
+
+.product__list__item--icons .selected:hover {
+  color: var(--pink);
+}
+
+#heart--liked {
+  /*display: none; REMOVED */
+  transition: .2s;
+}
+
+#addtocart {
+  margin-left: 10px;
+}
+
+
+.butuku
+{
+font-size:22px;
+color:black;
+  font-family:  "Rubik", sans-serif;
+  }
+
+.wedie a{
+  margin-left:2rem;
+margin-top:2rem;
+color:#2b72bf;
+font-size:20px;
+font-family: font-family: union-primary-font,union-sans-serif,-apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+}
+.wedie
+{
+  margin-left:2rem;
+margin-top:2rem;
+}
+.wedie2
+{
+font-size:20px;
+color:grey;
+font-family: font-family: union-primary-font,union-sans-serif,-apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+}
+
+.star{
+    color: golden;
+    font-size: 30px;
+      padding: 0 0rem; /* space out the stars */
+}
+.star::before{
+          content: '\2606';    /* star outline */
+          cursor: pointer;
+}
+        .star.rated::before{
+          /* the style for a selected star */
+          content: '\2605';  /* filled star */
+        }
+
+        .stars{
+            counter-reset: rateme 0;
+            font-size: 2.0rem;
+            font-weight: 500;
+
+        }
+.star.rated{
+            counter-increment: rateme 1;
+        }
+.stars::after{
+            content: counter(rateme) '/5';
+        }
+
+
+ .card {
+ width:31rem;
+ padding-left:5px;
+    background-color: #FFF;
+    border-radius: 25px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    z-index: 0
+}
+
+.heading {
+    font-size: 25px;
+    padding-top:5px;
+
+}
+
+.desc {
+    font-size: 16px
+}
+
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: lightgrey;
+    padding-left: 0px
+}
+
+#progressbar .active {
+    color: #673AB7
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 15px;
+    width: 25%;
+    float: left;
+    position: relative;
+    font-weight: 400
+}
+
+#progressbar .step0:before {
+    content: ""
+}
+
+#progressbar li:before {
+    width: 40px;
+    height: 40px;
+    line-height: 45px;
+    display: block;
+    font-size: 20px;
+    background: #E0E0E0;
+    border-radius: 50%;
+    margin: auto;
+    padding: 2px
+}
+
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 10px;
+    background: #E0E0E0;
+    position: absolute;
+    left: 0;
+    top: 17px;
+    z-index: -1
+}
+
+#progressbar li:last-child:after {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px
+}
+
+#progressbar li:first-child:after {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: #F9A825
+}
+
+.sub-heading {
+    font-weight: 500
+}
+
+.yellow-text {
+    color: #F9A825
+}
+
+fieldset.show {
+    display: block
+}
+
+fieldset {
+    display: none
+}
+
+
+.radio {
+    display: inline-block;
+    border-radius: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: #BDBDBD;
+    font-weight: 500;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%)
+}
+
+.radio:hover {
+    box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1)
+}
+
+.radio.selected {
+    border: 1px solid #F9A825;
+    box-shadow: 0px 8px 16px 0px #EEEEEE;
+    color: #29B6F6 !important;
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -o-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+    filter: grayscale(0%)
+}
+
+.card-block {
+    border: 1px solid #CFD8DC;
+    width: 45%;
+    margin: 2.5%;
+    padding: 20px 25px 15px 25px
+}
+
+@media screen and (max-width: 768px) {
+    .card-block {
+        padding: 20px 20px 0px 20px;
+        height: 250px
+    }
+}
+
+.icon {
+    width: 85px;
+    height: 100px
+}
+
+.image-icon {
+    width: 85px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px
+}
+
+select,
+input,
+textarea,
+button {
+    padding: 8px 15px 8px 15px;
+    border-radius: 0px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    background-color: #ECEFF1;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    letter-spacing: 1px
+}
+
+select:focus,
+input:focus,
+textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid skyblue !important;
+    outline-width: 0
+}
+
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
+
+textarea {
+    height: 100px
+}
+
+button {
+    width: 120px;
+   text-align:center;
+}
+
+.fit-image {
+    width: 100%;
+    object-fit: cover
+}
+
+.btn-block {
+    border-radius: 5px;
+    height: 50px;
+    font-weight: 500;
+    cursor: pointer
+}
+
+.fa-long-arrow-right {
+    float: right;
+    margin-top: 4px
+}
+
+.fa-long-arrow-left {
+    float: left;
+    margin-top: 4px
+}
+
+
+div.cont
+{
+    font-family:  "Rubik", sans-serif;
+    margin: auto auto;
+	padding: 2em 1em;
+	text-align: center;
+}
+
+div.cont a
+{
+    font-color: #f44336;
+    text-decoration: none;
+    font-size: 20px ;
+    margin-top:10px;
+    padding: 30px 30px;
+    z-index: 0;
+    position:relative;
+    cursor: pointer;
+}
+.cont{
+  position: sticky;
+   top: 0;
+   z-index: 100;
+   }
+
+
+
+div.topBotomBordersOut a:before, div.topBotomBordersOut a:after
+{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 3px;
+    background: #f44336;
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+div.topBotomBordersOut a:before
+{
+    top: 3px;
+    transform: translateY(10px);
+}
+
+div.topBotomBordersOut a:after
+{
+    bottom: 3px;
+    transform: translateY(-10px);
+}
+
+div.topBotomBordersOut a:hover:before, div.topBotomBordersOut a:hover:after
+{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+    .navbar-nav > li{
+  padding-left:20px;
+  padding-right:20px;
+}
+.ravi
+{
+color:black;
+  font-family:  "Rubik", sans-serif;
+
+
+  }
+  .checked {
+  color: orange;
+}
+.fa{
+ font-size:16px;
+ }
+ .faa,h5{
+ font-size:16px;
+ font-family:  "Rubik", sans-serif;
+ color:grey;
+ padding-top:10px;
+ }
+.ravi1
+{margin-top:2px;}
+.ravi3{
+color:black;
+font-size:25px;
+ font-family:  "Rubik", sans-serif;
+ }
+.thought{
+font-size:22px;
+ font-family:  "Rubik", sans-serif;
+ font-color:grey;
+ padding-top:5px;
+ }
+ .review{
+ padding-top:5px;}
+
+h2,h4
+{
+color:white;
+  font-family:  "Playfair Display";
+  }
+.form-title
+{
+color:black;
+  font-family:  "Rubik", sans-serif;
+  }
+
+ h6
+  {
+  color:white;
+  font-family:  "Playfair Display";
+  font-size: 70px;
+  }
+.main-section{
+	background-color:#fff;
+}
+.rating-part-left h1{
+	font-size:75px;
+	color: red;
+	font-family:  "Rubik", sans-serif;
+}
+.rating-part-left i{
+	font-size:22px;
+	padding:2px;
+	color:#FDC91B;
+}
+.rating-part-left p{
+	font-size:18px;
+	color:#504F55;
+	font-family:  "Rubik", sans-serif;
+}
+.progress-bar-section{
+	display: inline-block;
+	text-align: center;
+	margin-right: 15px;
+}
+.progress-bar-section p{
+	color: red;
+}
+.progress-bar-section i{
+	font-size: 20px;
+	color:#FDC91B;
+}
+.progress-bar-vertical{
+	width: 36px;
+	min-height:150px;
+	padding: 3px;
+	position: relative;
+	border-radius: 0px;
+  	box-shadow: none;
+  	margin-bottom: 10px;
+}
+.progress-bar{
+  	position: absolute;
+  	bottom: 3px;
+  	width: 30px;
+  	background: red;
+}
+.rating-part-right i,.review-part-right i{
+	font-size: 20px;
+	padding:4px 0px;
+	color:#FDC91B;
+}
+.rating-part-right span{
+	color:#337AB7;
+	font-size:17px;
+	padding-left: 5px;
+}
+.rate{
+color:red;
+}
+
+.review-part-left{
+	padding-left:30px;
+}
+.review-part-left img{
+	height:70px;
+	width:70px;
+	border-radius: 50%;
+	border:2px solid #337AB7;
+}
+.review-part-left p{
+	margin:0px;
+	font-size:17px;
+	color:#B3B5B4;
+	font-family:  "Rubik", sans-serif;
+}
+.review-part-left span{
+	font-size:19px;
+	font-family:  "Rubik", sans-serif;
+}
+.review-part-left small{
+	color:#B3B5B4;
+}
+.review-part-right p{
+	font-size: 18px;
+	color:#919191;
+	font-family:  "Rubik", sans-serif;
+}
+ .animated {
+    -webkit-transition: height 0.2s;
+    -moz-transition: height 0.2s;
+    transition: height 0.2s;
+}
+
+.stars
+{
+    margin: 20px 0;
+    font-size: 24px;
+    color: orange;
+}
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .nav-link{ color: #fff;  }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+	}
+div.dropdown-multicol2{
+  width: 40em;
+}
+div.dropdown-multicol2>div.dropdown-col{
+  display:inline-block;
+  width: 42%;
+}
+.bar
+{ font-family:"Brush Script MT, Brush Script Std, cursive";
+ font-color="white";
+ }
+.close{
+font-size:50px;
+}
+.name {
+  font-size: 14px;
+  color: #333;
+  padding-top: 15px;
+}
+.nav-link{
+font-size: 18px;
+  font-family:"Playfair Display";
+  font-size: 1rem;
+line-height: 1.5;
+font-family: "Rubik", sans-serif;
+font-weight: normal;
+font-style: normal;
+list-style: none;
+box-sizing: border-box;
+text-decoration: none;
+background-color: transparent;
+transition: 0.3s;
+outline: medium none;
+display: block;
+padding: .5rem 1rem;
+padding-right: .5rem;
+padding-left: .5rem;
+}
+.hovereffect {
+width:650%;
+height:650%;
+float:left;
+overflow:hidden;
+position:relative;
+text-align:center;
+cursor:default;
+}
+
+.hovereffect .overlay {
+width:650%;
+height:650%;
+position:absolute;
+overflow:hidden;
+top:0;
+left:0;
+opacity:0;
+background-color:rgba(0,0,0,0.5);
+-webkit-transition:all .4s ease-in-out;
+transition:all .4s ease-in-out
+}
+.btn-sm {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 13px 30px;
+    font-family: "Rubik", sans-serif;
+}
+.btn-radius {
+    border-radius: 100px !important;
+}
+.btn-danger{
+    background: #e81216;
+    background: -moz-linear-gradient(-45deg, #e81216 0%, #f45355 50%, #f6290c 51%, #ed0e11 71%, #fc1b21 100%);
+    background: -webkit-linear-gradient(-45deg, #e81216 0%,#f45355 50%,#f6290c 51%,#ed0e11 71%,#fc1b21 100%);
+    background: linear-gradient(135deg, #e81216 0%,#f45355 50%,#f6290c 51%,#ed0e11 71%,#fc1b21 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e81216', endColorstr='#fc1b21',GradientType=1 );
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 3s ease infinite;
+    -moz-animation: AnimationName 3s ease infinite;
+    animation: AnimationName 3s ease infinite;
+    -webkit-animation: AnimationName 3s ease infinite;
+    -moz-animation: AnimationName 3s ease infinite;
+    animation: AnimationName 3s ease infinite;
+    border: medium none;
+}
+@-webkit-keyframes AnimationName {
+    0%{
+        background-position:0% 31%
+    }
+    50%{
+        background-position:100% 70%
+    }
+    100%{
+        background-position:0% 31%
+    }
+}
+@-moz-keyframes AnimationName {
+    0%{
+        background-position:0% 31%
+    }
+    50%{
+        background-position:100% 70%
+    }
+    100%{
+        background-position:0% 31%
+    }
+}
+@keyframes AnimationName {
+    0%{
+        background-position:0% 31%
+    }
+    50%{
+        background-position:100% 70%
+    }
+    100%{
+        background-position:0% 31%
+    }
+}
+.but
+{
+width:200px;
+}
+.faaf
+{
+ width:50px;
+ }
+.colu
+{
+padding-bottom:5px;
+}
+.carousel {
+  position: relative;
+}
+.carousel-item img {
+  object-fit: cover;
+}
+#carousel-thumbs {
+  background: rgba(255,255,255,.3);
+  bottom: 0;
+  left: 0;
+  padding: 0 50px;
+  right: 0;
+}
+#carousel-thumbs img {
+  border: 5px solid transparent;
+  cursor: pointer;
+
+}
+#carousel-thumbs img:hover {
+  border-color: rgba(255,255,255,.3);
+}
+#carousel-thumbs .selected img {
+  border-color: #fff;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+}
+
+@media all and (max-width: 767px) {
+  .carousel-container #carousel-thumbs img {
+    border-width: 3px;
+  }
+}
+@media all and (min-width: 576px) {
+  .carousel-container #carousel-thumbs {
+    position: absolute;
+  }
+}
+@media all and (max-width: 576px) {
+  .carousel-container #carousel-thumbs {
+    background: #ccccce;
+  }
+}
+
+.footer-bs {
+    background-color: #d9534f;
+	padding: 20px 20px;
+	color: rgba(255,255,255,1.00);
+	margin-bottom: 3px;
+	border-bottom-right-radius: 6px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 6px;
+}
+.footer-brand{
+display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 15px; }
+.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
+.footer-bs .footer-brand h2
+{
+ margin:0px 0px 5px;
+ font-family: "Rubik", sans-serif;
+ color:"white";
+   align-content: center;
+ }
+.footer-bs .footer-brand p {
+ font-size:13px;
+  color:rgba(255,255,255,0.70);
+   font-family: "Rubik", sans-serif;
+     text-align: center;
+   }
+
+.footer-bs .footer-nav ul.pages { list-style:none; padding:0px; }
+.footer-bs .footer-nav ul.pages li { padding:5px 0px;}
+.footer-bs .footer-nav ul.pages a
+ { color:rgba(255,255,255,1.00);
+ font-family: "Rubik", sans-serif;font-size:
+  13px; font-weight:bold;
+   text-transform:uppercase;
+     align-content: center;
+    }
+.footer-bs .footer-nav ul.pages a:hover { color:rgba(255,255,255,0.80);
+ text-decoration:none; }
+.footer-bs .footer-nav h4 {
+font-family: "Rubik", sans-serif;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin-bottom:5px;
+}
+
+.footer-bs .footer-nav ul.list { list-style:none; padding:0px; }
+.footer-bs .footer-nav ul.list li { padding:5px 0px;  align-content: center;}
+.footer-bs .footer-nav ul.list a { color:rgba(255,255,255,0.80);font-family: "Rubik", sans-serif;font-size: 13px;  align-content: center; }
+.footer-bs .footer-nav ul.list a:hover { color:rgba(255,255,255,0.60); text-decoration:none; }
+
+.footer-bs .footer-social ul { list-style:none; padding:0px; }
+.footer-bs .footer-social h4 {
+font-family: "Rubik", sans-serif;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	  align-content: center;
+}
+.footer-bs .footer-social li { padding:5px 4px;}
+.footer-bs .footer-social a { color:rgba(255,255,255,1.00);}
+.footer-bs .footer-social a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+
+.footer-bs .footer-ns h4 {
+font-family: "Rubik", sans-serif;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin-bottom:5px;
+}
+.footer-bs .footer-ns p {
+font-family: "Rubik", sans-serif;font-size:12px; color:rgba(255,255,255,0.70); }
+
+@media (min-width: 768px) {
+	.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-left:solid 1px rgba(255,255,255,0.10); }
+}
+
+
+
+</style>
+
+
+</head>
+
+<body>
+
+<!--menu bar-->
+<nav class="navbar navbar-expand-sm bg-danger navbar-dark">
+    <!-- Brand/logo-->
+    <a class="navbar-brand" href="home" >
+        <img src="{% static 'images/venue/new1.png' %}" width="200" height="100" alt="logo">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="home">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown"> Vendors  </a>
+                <div class="dropdown-menu dropdown-multicol2" aria-labelledby="dropdownMenuButton">
+                     <div class="dropdown-col">
+                        <a class="dropdown-item" href="invitation">Wedding Invitations</a>
+                        <a class="dropdown-item" href="pandit">Wedding Pandit</a>
+                        <a class="dropdown-item" href="venue">Wedding Venue</a>
+                        <a class="dropdown-item" href="decorators">Wedding Decorators</a>
+                    </div>
+                    <div class="dropdown-col">
+                        <a class="dropdown-item" href="catering">Wedding Catering services</a>
+                        <a class="dropdown-item" href="photography">Wedding Photography</a>
+                        <a class="dropdown-item" href="makeup">Wedding Make up</a>
+                        <a class="dropdown-item" href="band">Wedding Band</a>
+                        <div class="dropdown-menu dropdown-multicol2" aria-labelledby="dropdownMenuButton">
+                            <div class="dropdown-col">
+                                <a class="dropdown-item" href="djchoreo">Wedding DJ & Choreo</a>
+                            </div>
+                        </div>
+                </div>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">Add Vendor  </a>
+                <div class="dropdown-menu dropdown-multicol2" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-col">
+                        <a class="dropdown-item" href="invivendor"> Invitations</a>
+                        <a class="dropdown-item" href="panditvendor"> Pandit</a>
+                        <a class="dropdown-item" href="venuevendor"> Venue</a>
+                        <a class="dropdown-item" href="decorvendor"> Decorators</a>
+                    </div>
+                    <div class="dropdown-col">
+                        <a class="dropdown-item" href="cateringvendor"> Catering services</a>
+                        <a class="dropdown-item" href="photovendor"> Photography</a>
+                        <a class="dropdown-item" href="makeupvendor"> Make up</a>
+                        <a class="dropdown-item" href="djvendor"> Band</a>
+                        <div class="dropdown-menu dropdown-multicol2" aria-labelledby="dropdownMenuButton">
+                            <div class="dropdown-col">
+                                <a class="dropdown-item" href="musicdjvendor">DJ & Choreo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <button type="button" onclick="window.location.href='package'" class="btn btn-danger btn-sm btn-radius">Package</button>
+            </li>
+        </ul>
+    </div>
+
+
+    <ul class="navbar-nav justify-content-end">
+
+        <li class="nav-item">
+            {% if user.is_authenticated %}
+        <li class="nav-item dropdown">
+            <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown"> {{ user.username }} </a>
+            <div class="dropdown-menu dropdown-multicol2" aria-labelledby="dropdownMenuButton">
+                <div class="dropdown-col">
+                    <a class="dropdown-item" href="dashboard">Dashboard</a>
+                    <a class="dropdown-item" href="logout">logout</a>
+                     <a class="dropdown-item" href="adverts">My adverts</a>
+                        <a class="dropdown-item" href="response">My response</a>
+
+                </div>
+                {% else %}
+                <a class="nav-link" href="index">Login/Register</a>
+                {% endif %}
+            </div>
+        </li>
+
+    </ul>
+</nav>
+<!--end navbar--->
+<h4 class="wedie">
+    <a href="venue">Wedding Venues &nbsp;/</a><a href="#"> Erode Venues&nbsp;/</a><a href="#">Banquet Halls&nbsp;/  </a>
+    <span class="wedie2">&nbsp;&nbsp;&nbsp{{result.name}}</span>
+</h4>
+<!------gallery---->
+
+
+
+
+<!------end------>
+<div class="container mt-5">
+    <div class="carousel-container position-relative row">
+
+        <!-- Sorry! Lightbox doesn't work - yet. -->
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-slide-number="0">
+                    <img src="/media/{{result.image}}" height="600" width="950" class="d-block w-400" alt="..." data-remote="https://source.unsplash.com/Pn6iimgM-wo/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                </div>
+                <div class="carousel-item" data-slide-number="1">
+                    <img src="{% static 'images/venue/ravi/v2.jpeg' %}" height="600" width="950" class="d-block w-400" alt="..." data-remote="https://source.unsplash.com/tXqVe7oO-go/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                </div>
+                <div class="carousel-item" data-slide-number="2">
+                    <img src="{% static 'images/venue/ravi/v3.jpeg' %}" height="600" width="950" class="d-block w-400" alt="..." data-remote="https://source.unsplash.com/qlYQb7B9vog/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                </div>
+                <div class="carousel-item" data-slide-number="3">
+                    <img src="{% static 'images/venue/ravi/v4.jpeg' %}" height="600" width="950" class="d-block w-400" alt="..." data-remote="https://source.unsplash.com/QfEfkWk1Uhk/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                </div>
+                <div class="carousel-item" data-slide-number="4">
+                    <img src="{% static 'images/venue/ravi/v5.jpeg' %}" height="600" width="950" class="d-block w-400" alt="..." data-remote="https://source.unsplash.com/CSIcgaLiFO0/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                </div>
+                <div class="carousel-item" data-slide-number="5">
+                    <img src="{% static 'images/venue/ravi/v6.jpeg' %}"  height="600" width="950"  class="d-block w-400" alt="..." data-remote="https://source.unsplash.com/a_xa7RUKzdc/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                </div>
+                <div class="carousel-item" data-slide-number="6">
+                    <img src="{% static 'images/venue/ravi/v7.jpg' %}"  height="600" width="950"  class="d-block w-400" alt="..." data-remote="https://source.unsplash.com/uanoYn1AmPs/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                </div>
+                <div class="carousel-item" data-slide-number="7">
+                    <img src="{% static 'images/venue/ravi/v8.jpeg' %}" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/_snqARKTgoc/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                </div>
+                <div class="carousel-item" data-slide-number="8">
+                    <img src="https://source.unsplash.com/M9F8VR0jEPM/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/M9F8VR0jEPM/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                </div>
+                <div class="carousel-item" data-slide-number="9">
+                    <img src="https://source.unsplash.com/Q1p7bh3SHj8/1600x900/" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/Q1p7bh3SHj8/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Navigation -->
+        <div id="carousel-thumbs" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row mx-0">
+                        <div id="carousel-selector-0" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="0">
+                            <img src="/media/{{i.image}}" class="img-fluid wd-100" alt="...">
+                        </div>
+                        <div id="carousel-selector-1" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="1">
+                            <img src="{% static 'images/venue/ravi/v2.jpeg' %}"  class="img-fluid wd-100" alt="...">
+                        </div>
+                        <div id="carousel-selector-2" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="2">
+                            <img src="{% static 'images/venue/ravi/v3.jpeg' %}" class="img-fluid wd-150" alt="...">
+                        </div>
+                        <div id="carousel-selector-3" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="3">
+                            <img src="{% static 'images/venue/ravi/v4.jpeg' %}" class="img-fluid wd-200" alt="...">
+                        </div>
+                        <div id="carousel-selector-4" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="4">
+                            <img src="{% static 'images/venue/ravi/v5.jpeg' %}" class="img-fluid wd-200" alt="...">
+                        </div>
+                        <div id="carousel-selector-5" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="5">
+                            <img src="{% static 'images/venue/ravi/v6.jpeg' %}" class="img-fluid" alt="...">
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row mx-0">
+                        <div id="carousel-selector-6" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="6">
+                            <img src="{% static 'images/venue/ravi/v7.jpg' %}" class="img-fluid" alt="...">
+                        </div>
+                        <div id="carousel-selector-7" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="7">
+                            <img src="https://source.unsplash.com/_snqARKTgoc/600x400/" class="img-fluid" alt="...">
+                        </div>
+                        <div id="carousel-selector-8" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="8">
+                            <img src="https://source.unsplash.com/M9F8VR0jEPM/600x400/" class="img-fluid" alt="...">
+                        </div>
+                        <div id="carousel-selector-9" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="9">
+                            <img src="https://source.unsplash.com/Q1p7bh3SHj8/600x400/" class="img-fluid" alt="...">
+                        </div>
+                        <div class="col-2 px-1 py-2"></div>
+                        <div class="col-2 px-1 py-2"></div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-thumbs" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+    </div> <!-- /row -->
+    <div class="cont red topBotomBordersOut" data-spy="affix-top">
+        <nav>
+            <a>Photos</a>
+            <a href="#about">About</a>
+            <a href="#amenities">Amenities</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Contact</a>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalPoll-1">Get Quotation</button>
+
+            <div class="modal fade right "  id="modalPoll-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true" data-backdrop="false">
+                <div class="modal-dialog modal-full-height modal-right modal-notify modal-info " role="document">
+                    <div class="modal-content">
+                        <form method="POST" class="rform" id="rform" enctype="multipart/form-data">
+
+                            {% csrf_token %}
+                             <input type="hidden" name="vendortyp" value="venue">
+                            <div class="row d-flex justify-content">
+                                <div class="col-xl-5 col-lg-6 col-md-7">
+                                    <div class="card b-0">
+
+                                        <div class="text-left"><button type="button " class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true" class="white-text">×</span>
+                                        </button>
+                                            <h3 class="heading">Request a Quote</h3>
+
+                                            <p class="desc">{{result.name}}</p>
+                                        </div>
+                                        <hr>
+                                        <ul id="progressbar" class="text-center">
+                                            <li class="active step0" id="step1"></li>
+                                            <li class="step0" id="step2"></li>
+                                            <li class="step0" id="step3"></li>
+                                            <li class="step0" id="step4"></li>
+                                        </ul>
+                                        <fieldset class="show">
+                                            <div class="form-card">
+                                                <input type="hidden" name="vendorid" value="{{result.id}}">
+                                                <input type="hidden" name="customeri"  value={{user.id}}>
+                                                <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
+                                                    <h5 class="sub-heading ">Select the marriage dates<span class=" sub-heading text-danger">* Required</span> </h5><br/>
+                                                    <h3 >From</h3><input type="date" id="date1" name="fdate" placeholder="" class="form-control" ><br/>
+                                                    <h3 >Till</h3> <input type="date" id="date2" name="ldate" placeholder="" class="form-control" >
+
+
+                                                </div>
+                                                <h5 class="sub-heading ">Personal Details <span class=" sub-heading text-danger">* Required</span> </h5>
+                                                <div class="form-group"> <span class="form-control-label text-right">First Name * :</span>
+                                                    <input type="text" id="fname" name="fname" placeholder="" class="form-control" > </div>
+                                                <div class="form-group"> <span class="form-control-label">Last Name * :</span> <input type="text" id="lname" name="lname" placeholder="" class="form-control" > </div>
+                                                <div class="form-group"> <span class="form-control-label">Email ID * :</span> <input type="text" id="email" name="email" placeholder="" class="form-control" > </div>
+                                                <div class="form-group"> <span class="form-control-label">Contact No. * :</span> <input type="text" id="mob" name="mob" placeholder="" class="form-control"> </div>
+                                                <h5 class="sub-heading" >Amenities<span class=" sub-heading text-danger">* Required</span> </h5>
+                                                <div class="form-group">
+                                                    <div class="col-md-6 colu" >
+                                                        <div class="custom-control custom-checkbox custom-control-inline">
+                                                            <input type="checkbox" name="ame[]" class="custom-control-input" id="defaultInline1">
+                                                            <label class="custom-control-label" for="defaultInline1">Sound Equipment</label></div><br/>
+                                                        <div class="custom-control custom-checkbox custom-control-inline">
+                                                            <input type="checkbox" name="ame[]" class="custom-control-input" id="defaultInline2">
+                                                            <label class="custom-control-label" for="defaultInline2">Video Equipment</label></div><br/>
+                                                        <div class="custom-control custom-checkbox custom-control-inline">
+                                                            <input type="checkbox" name="ame[]" class="custom-control-input" id="defaultInline3">
+                                                            <label class="custom-control-label" for="defaultInline3">Air Conditioner</label></div><br/>
+                                                        <div class="custom-control custom-checkbox custom-control-inline">
+                                                            <input type="checkbox" name="ame[]" class="custom-control-input" id="defaultInline4">
+                                                            <label class="custom-control-label" for="defaultInline4">Lighting</label></div><br/>
+
+                                                        <div class="custom-control custom-checkbox custom-control-inline">
+                                                            <input type="checkbox" name="ame[]" class="custom-control-input" id="defaultInline12" >
+                                                            <label class="custom-control-label" for="defaultInline12">Valet parking</label></div><br/>
+                                                    </div>
+                                                    <div class="form-group"> <span class="form-control-label text-right">No of guests * :</span>
+                                                        <input type="text" id="guest" name="guest" placeholder="100-500" class="form-control" > </div>
+                                                    <div class="form-group"> <span class="form-control-label">No of Rooms * :</span>
+                                                        <input type="text" id="rooms" name="rooms" placeholder="10-20" class="form-control" > </div>
+                                                    <h5 class="sub-heading mb-4">Success!</h5>
+                                            <p class="message">Thank You <br>As per your Quoatation your amount will be <span style="color:red;">Rs.50,000</span></p>
+                                            <div class="check"> <img class="fit-image check-img" src="https://i.imgur.com/QH6Zd6Y.gif"> </div>
+
+                                        </div>
+                                        <input type="submit" name="signup" id="signup" class="form-submit" value="Submit"/>
+
+
+
+
+
+                                                </div>
+
+                                        </fieldset>
+
+
+                                </div>
+                            </div>
+                            </div>
+
+
+                    </form>
+                </div>
+
+
+
+            </div>
+    </div>
+
+
+    </nav>
+</div>
+<hr>
+
+<div class="ravi1">
+    <h1 class="ravi">{{result.name}}</h1>
+    <form action="{% url 'wishlist' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" value="{{result.id}}" name="pid">
+                            <button type="submit" class="btn btn-success ">
+                                <i class="fa fa-shopping-cart"></i>
+                                Add To Wishlist
+                            </button>
+                        </form>
+    <div class="product__list__item--icons butuku">
+
+
+
+
+        <!---<a href="#!" type="button" class="card-link-secondary small text-uppercase"><i
+            class="fas fa-heart mr-1"></i></a>
+
+            <span id="heart1" ><a attr_id="{{m.pk}}" action_url="{% url 'add_to_wishlist' %}"><i id="heart1--liked" class="far fa-heart fa-2x"></i></a></span>
+
+        <span id="heart" ><a attr_id="{{m.pk}}" action_url="{% url 'wishlist' %}"><i id="heart--liked" class="far fa-heart fa-2x"></i></a></span>-->
+
+
+    </div>
+
+    <br>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>&nbsp
+    <span class="faa">3.0 (27)</span>
+</div>
+
+
+
+<h5>{{result.address}}</h5>
+<hr>
+<div id="about">
+    <h1 class="ravi3">About this vendor</h1>
+    <p class="faa">{{result.name}}{{result.about}}, situated in Erode, is a place where the old and the new meet in an exquisite manner. It constitutes a fully-equipped Wedding Venue. This is a venue like none other and is the perfect place for a celebration like your wedding. With all these great facilities, it is your ideal destination for your special functions. Book them via MatrimonyBazaar for the best rates and assured great service.</p>
+</div>
+<hr>
+<div id="amenities">
+    <h1 class="ravi3">Amenities + Details</h1>
+    <div class="row">
+        <div class="col-sm-4">
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check" fill="red" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+            </svg>
+            {{result.checks}}<br/>
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check" fill="red" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+            </svg>Premium venue<br/>
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check" fill="red" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+            </svg>Open air venue<br/>
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check" fill="red" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+            </svg> Oceanview<br/>
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check" fill="red" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+            </svg> Poolside venue<br/>
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check" fill="red" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+            </svg> Hilltop venue<br/>
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check" fill="red" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+            </svg> Temple venue<br/>
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check" fill="red" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+            </svg> Valet parking<br/>
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check" fill="red" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+            </svg> Outside food allowed<br/>
+        </div>
+        <div class="col-sm-4">
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check" fill="red" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+            </svg> Green room available<br/>
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check" fill="red" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+            </svg> Non-vegetarian food allowed<br/>
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check" fill="red" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+            </svg> Air-conditioned dining area<br/>
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check" fill="red" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+            </svg> Wheelchair-friendly<br/>
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check" fill="red" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+            </svg> Elevator / Lift available<br/>
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check" fill="red" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+            </svg> Air-conditioned lodging available<br/>
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check" fill="red" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+            </svg> Utensils available<br/>
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check" fill="red" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+            </svg>Swing available<br/>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="reviews">
+    <h1 class="ravi3">{{result.name}} ratings</h1>
+
+
+            <div class="row review-section">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+
+
+
+                </div>
+
+
+            <hr>
+
+                                <div class="text-right">
+                                    <div class="stars" data-rating="3">
+                                        <span class="star">&nbsp;</span>
+                                        <span class="star">&nbsp;</span>
+                                        <span class="star">&nbsp;</span>
+                                        <span class="star">&nbsp;</span>
+                                        <span class="star">&nbsp;</span>
+                                    </div>
+
+
+                                    <button class="btn btn-success btn-lg bg-danger" type="submit">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+</div> <!-- /container -->
+<!------gallery-->
+
+
+
+<!----------- Footer ------------>
+<footer class="footer-bs">
+    <div class="row">
+        <div class="col-md-4 footer-brand animated fadeInLeft">
+            <a class="footer-brand" href="home" >
+                <img src="{% static 'images/venue/new1.png' %}" width="200" height="100" alt="logo">
+            </a>
+            <p>We are a full-service wedding and event planning company dedicated to once-in-a-lifetime celebrations. Let I Do… make your vision a reality. </p>
+            <p>© 2020 Copyright | Three Knots | All rights reserved</p>
+        </div>
+        <div class="col-md-2 footer-nav animated fadeInUp">
+            <h4>Vendors</h4>
+            <div class="col-md-4">
+                <ul class="pages">
+                    <li><a href="venue">Venue</a></li>
+                    <li><a href="#">Invitation</a></li>
+                    <li><a href="#">Pandit</a></li>
+                    <li><a href="#">Decorators</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul class="pages">
+                    <li><a href="#">Photography</a></li>
+                    <li><a href="#">Invitation</a></li>
+                    <li><a href="#">Band</a></li>
+                    <li><a href="#">Make_Up</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3 footer-nav animated fadeInUp">
+            <div class="col-md-6">
+                <ul class="list">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Terms & Condition</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-2 footer-social animated fadeInDown">
+            <h4>Follow Us</h4>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Google</a></li>
+            </ul>
+        </div>
+
+    </div>
+</footer>
+
+
+
+{% block content%}
+{% endblock %}
+</body>
+</html>

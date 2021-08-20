@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+
+    <script src="{% static 'js/side/jquery.min.js' %}"></script>
+    <script src="{% static 'js/side/popper.js' %}"></script>
+    <script src="{% static 'js/side/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/side/main.js' %}"></script>
+    <style>
+  #sidebar {
+  min-width: 300px;
+  max-width: 300px;
+  background: #566573;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+  #sidebar.active {
+    margin-left: -300px; }
+  #sidebar .logo {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto; }
+    #sidebar .logo span {
+      display: block; }
+  #sidebar ul.components {
+    padding: 0; }
+  #sidebar ul li {
+    font-size: 16px; }
+    #sidebar ul li > ul {
+      margin-left: 10px; }
+      #sidebar ul li > ul li {
+        font-size: 14px; }
+    #sidebar ul li a {
+      padding: 10px 0;
+      display: block;
+      color: rgba(255, 255, 255, 0.8);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+      #sidebar ul li a:hover {
+        color: #f8b739; }
+    #sidebar ul li.active > a {
+      background: transparent;
+      color: #f8b739; }
+  @media (max-width: 991.98px) {
+    #sidebar {
+      margin-left: -300px; }
+      #sidebar.active {
+        margin-left: 0; } }
+
+  .card{
+  transition:0.5s;
+  cursor:pointer;
+
+.pari
+{
+ margin-right:10px;
+ margin-top:50px;
+ }
+
+</style>
+    <script>
+        $('.list-unstyled.components.mb-5 > li').on('click', function (e) {
+e.preventDefault();
+$('.list-unstyled.components.mb-5 > li').removeClass('active');
+$(this).addClass('active');
+    </script>
+</head>
+
+<body onload="grand_Total()">
+
+<div class="wrapper d-flex align-items-stretch side">
+
+    <nav id="sidebar"  >
+        <div class=" p-4 pt-5">
+            <ul class="list-unstyled components mb-5">
+                <li>
+                    <a href="wishlist"  aria-expanded="false">Wishlist</a>
+                </li>
+
+                <li>
+                    <a href="booking" aria-expanded="false" >Booking</a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu"  aria-expanded="false" >Finalize</a>
+                </li>
+
+
+
+
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<!-- Page Content  -->
+
+Hey there,
+{% if user.is_authenticated %}
+<h1>{{user.username}}</h1>
+{% else %}
+<h1>unknown</h1>
+{% endif %}
+{% if items|length == 0 %}
+<div class="container-fluid">
+    <div class="jumbotron alert alert-danger">
+        &times; Your Shopping Cart is empty !!!
+    </div>
+</div>
+{% else %}
+<div class="container-fluid" >
+    <div class="row" style="background:rgba(0,0,0,0.5)">
+        <div class="col-md-2 text-light text-center font-weight-bold text-uppercase">
+            {% if status %}
+            <h1>{{status}}</h1>
+            {% else %}
+            <h1>My Booking ({{items|length}})</h1>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% if user.is_authenticated %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-9 my-5" >
+            <div style="box-shadow:0px 0px 10px gray;">
+                {% if msz %}
+                <div class="{{cls}} mt-3">{{msz}}</div>
+                {% endif %}
+
+                <table class="table cart">
+                    <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Vendor  Name</th>
+                        <th>Vendor Price</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% for i in items %}
+
+                    <tr id="row{{i.id}}">
+                        <td><img src="/media/{{i.vendort.image}}" style="height:100px;width:150px;"></td>
+                        <td>{{i.vendort.name}}</td>
+                        <td> <span id="sp{{i.id}}"> {{i.amount}}</span></td>
+
+                        <td><a href="">Remove</a></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="col-md-3 my-5">
+            <div style="box-shadow:0px 0px 10px gray;">
+                <h2 class="text-center" style="color:black;">CHECKOUT</h2>
+                <table class="table">
+                    <tr>
+                        <td>ITEM TOTAL</td>
+                        <td>
+                            {{items|length}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>GRAND TOTAL</td>
+                        <td>{{total.amount__sum}}</td>
+                    </tr>
+
+                </table>
+                <div class="p-3">
+                    <a href="order" class="btn btn-success btn-block btn-sm">PLACE BOOKING<span id="btamt"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+       function grandTotal(){
+           $.ajax({
+               url:"{% url 'get_cart_data' %}",
+               type:'get',
+               success:function(data){
+
+                   $("#item_total").html("&#8377;"+data.total);
+                   $("#disc").html("&#8377;"+data.offer);
+                   $("#offer").html("&#8377;"+save+" <span class='text-success'>("+p+"%)</span>");
+                    $("#quantity").html(data.quan+" Items");
+                    $("#grand_total").html("&#8377;"+data.offer);
+                    $("#btamt").html("&#8377;"+data.offer);
+
+
+               }
+           })
+       }
+       grandTotal();
+function remove_cart(id){
+           $.ajax({
+               url:"{% url 'change_quan' %}",
+               data:{delete_cart:id},
+               success:function(data){
+                    $("#row"+id).hide();
+               }
+
+           })
+       }
+
+
+
+
+
+   </script>
+
+{% endif %}
+
+{% endif %}
+
+{% endblock %}
+
+</body>

@@ -1,0 +1,744 @@
+{% load static %}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS only -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gijgo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slicknav.css' %}">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script>
+ function checkAnswer() {
+   $('select[name=Select1]').on("change", function(e){
+
+      if($(this).val() == 'venue'){
+      alert($(this).val());
+         window.location="venue";
+      }
+      //window.location.url="www.google.com";
+   });
+});
+</script>
+
+
+
+    <style>
+    .navbar-nav > li{
+  padding-left:20px;
+  padding-right:20px;
+}
+.rev_slider .tp-mask-wrap .tp-caption, .rev_slider .tp-mask-wrap {
+    text-align: center;
+}
+.where_togo_area .search_wrap .input_field input {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: 1px solid #ff4444;
+  padding-left: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: #fff;
+}
+     .carousel-inner img {
+    width: 50%;
+    height: 80%;
+  }
+  .where_togo_area {
+  background: #CC0000;
+  padding: 30px 0;
+}
+.btn-sm {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 13px 30px;
+    font-family: "Rubik", sans-serif;
+}
+.btn-radius {
+    border-radius: 100px !important;
+}
+.btn-danger{
+    background: #e81216;
+    background: -moz-linear-gradient(-45deg, #e81216 0%, #f45355 50%, #f6290c 51%, #ed0e11 71%, #fc1b21 100%);
+    background: -webkit-linear-gradient(-45deg, #e81216 0%,#f45355 50%,#f6290c 51%,#ed0e11 71%,#fc1b21 100%);
+    background: linear-gradient(135deg, #e81216 0%,#f45355 50%,#f6290c 51%,#ed0e11 71%,#fc1b21 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e81216', endColorstr='#fc1b21',GradientType=1 );
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 3s ease infinite;
+    -moz-animation: AnimationName 3s ease infinite;
+    animation: AnimationName 3s ease infinite;
+    -webkit-animation: AnimationName 3s ease infinite;
+    -moz-animation: AnimationName 3s ease infinite;
+    animation: AnimationName 3s ease infinite;
+    border: medium none;
+}
+@-webkit-keyframes AnimationName {
+    0%{
+        background-position:0% 31%
+    }
+    50%{
+        background-position:100% 70%
+    }
+    100%{
+        background-position:0% 31%
+    }
+}
+@-moz-keyframes AnimationName {
+    0%{
+        background-position:0% 31%
+    }
+    50%{
+        background-position:100% 70%
+    }
+    100%{
+        background-position:0% 31%
+    }
+}
+@keyframes AnimationName {
+    0%{
+        background-position:0% 31%
+    }
+    50%{
+        background-position:100% 70%
+    }
+    100%{
+        background-position:0% 31%
+    }
+}
+
+  h6,typo
+  {
+  color:white;
+  font-family:  "Playfair Display";
+  font-size: 70px;
+  }
+
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .nav-link{ color: #fff;  }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+	}
+div.dropdown-multicol2{
+  width: 40em;
+}
+ .dropdown{
+    width: 10rem;
+    padding: 0.3rem;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 7px;
+    border-bottom: 0;
+    border-right: 0;
+    border-top: 0.5px;
+    border-left: 0.5px;
+  }
+  .search_btn
+{
+width: 15rem;
+    padding: 0.3rem;
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 7px;
+    border-bottom: 0;
+    border-right: 0;
+    border-top: 0.5px;
+    border-left: 0.5px;
+}
+div.dropdown-multicol2>div.dropdown-col{
+  display:inline-block;
+  width: 42%;
+}
+.bar
+{ font-family:"Brush Script MT, Brush Script Std, cursive";
+ font-color="white";
+ }
+
+.name {
+  font-size: 14px;
+  color: #333;
+  padding-top: 15px;
+}
+.div-inline{
+    display:inline-block;
+}
+.footer-bs {
+    background-color: #d9534f;
+	padding: 20px 20px;
+	color: rgba(255,255,255,1.00);
+	margin-bottom: 0px;
+	border-bottom-right-radius: 6px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 6px;
+}
+.footer-brand{
+display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 15px; }
+.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
+.footer-bs .footer-brand h2
+{
+ margin:0px 0px 5px;
+ font-family: "Rubik", sans-serif;
+ color:"white";
+   align-content: center;
+ }
+.footer-bs .footer-brand p {
+ font-size:13px;
+  color:rgba(255,255,255,0.70);
+   font-family: "Rubik", sans-serif;
+     text-align: center;
+   }
+
+.footer-bs .footer-nav ul.pages { list-style:none; padding:0px; }
+.footer-bs .footer-nav ul.pages li { padding:5px 0px;}
+.footer-bs .footer-nav ul.pages a
+ { color:rgba(255,255,255,1.00);
+ font-family: "Rubik", sans-serif;font-size:
+  13px; font-weight:bold;
+   text-transform:uppercase;
+     align-content: center;
+    }
+.footer-bs .footer-nav ul.pages a:hover { color:rgba(255,255,255,0.80);
+ text-decoration:none; }
+.footer-bs .footer-nav h4 {
+font-family: "Rubik", sans-serif;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin-bottom:5px;
+}
+
+.footer-bs .footer-nav ul.list { list-style:none; padding:0px; }
+.footer-bs .footer-nav ul.list li { padding:5px 0px;  align-content: center;}
+.footer-bs .footer-nav ul.list a { color:rgba(255,255,255,0.80);font-family: "Rubik", sans-serif;font-size: 13px;  align-content: center; }
+.footer-bs .footer-nav ul.list a:hover { color:rgba(255,255,255,0.60); text-decoration:none; }
+
+.footer-bs .footer-social ul { list-style:none; padding:0px; }
+.footer-bs .footer-social h4 {
+font-family: "Rubik", sans-serif;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	  align-content: center;
+}
+
+.footer-bs .footer-social li { padding:5px 4px;}
+.footer-bs .footer-social a { color:rgba(255,255,255,1.00);}
+.footer-bs .footer-social a:hover { color:rgba(255,255,255,0.80); text-decoration:none; }
+
+.footer-bs .footer-ns h4 {
+font-family: "Rubik", sans-serif;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin-bottom:5px;
+}
+.footer-bs .footer-ns p {
+font-family: "Rubik", sans-serif;font-size:12px; color:rgba(255,255,255,0.70); }
+
+@media (min-width: 768px) {
+	.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-left:solid 1px rgba(255,255,255,0.10); }
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+<!--menu bar-->
+<nav class="navbar navbar-expand-sm bg-danger navbar-dark">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" href="home" >
+        <img src="{% static 'images/venue/new1.png' %}" width="200" height="100" alt="logo">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown"> Vendors  </a>
+                <div class="dropdown-menu dropdown-multicol2" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-col">
+                        <a class="dropdown-item" href="invitation">Wedding Invitations</a>
+                        <a class="dropdown-item" href="pandit">Wedding Pandit</a>
+                        <a class="dropdown-item" href="venue">Wedding Venue</a>
+                        <a class="dropdown-item" href="decorators">Wedding Decorators</a>
+                    </div>
+                    <div class="dropdown-col">
+                        <a class="dropdown-item" href="catering">Wedding Catering services</a>
+                        <a class="dropdown-item" href="photography">Wedding Photography</a>
+                        <a class="dropdown-item" href="makeup">Wedding Make up</a>
+                        <a class="dropdown-item" href="band">Wedding Band</a>
+                        <div class="dropdown-menu dropdown-multicol2" aria-labelledby="dropdownMenuButton">
+                            <div class="dropdown-col">
+                                <a class="dropdown-item" href="djchoreo">Wedding DJ & Choreo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">Add Vendor  </a>
+                <div class="dropdown-menu dropdown-multicol2" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-col">
+                        <a class="dropdown-item" href="invivendor"> Invitations</a>
+                        <a class="dropdown-item" href="panditvendor"> Pandit</a>
+                        <a class="dropdown-item" href="venuevendor"> Venue</a>
+                        <a class="dropdown-item" href="decorvendor"> Decorators</a>
+                    </div>
+                    <div class="dropdown-col">
+                        <a class="dropdown-item" href="cateringvendor"> Catering services</a>
+                        <a class="dropdown-item" href="photovendor"> Photography</a>
+                        <a class="dropdown-item" href="makeupvendor"> Make up</a>
+                        <a class="dropdown-item" href="djvendor"> Band</a>
+                        <div class="dropdown-menu dropdown-multicol2" aria-labelledby="dropdownMenuButton">
+                            <div class="dropdown-col">
+                                <a class="dropdown-item" href="musicdjvendor">DJ & Choreo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <button type="button" onclick="window.location.href='package'" class="btn btn-danger btn-sm btn-radius">Package</button>
+            </li>
+        </ul>
+    </div>
+
+
+    <ul class="navbar-nav justify-content-end">
+
+
+
+        <li class="nav-item">
+            {% if user.is_authenticated %}
+            <li class="nav-item dropdown">
+                <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown"> {{ user.username }} </a>
+                <div class="dropdown-menu dropdown-multicol2" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-col">
+                        <a class="dropdown-item" href="dashboard">Dashboard</a>
+                        <a class="dropdown-item" href="logout">logout</a>
+                        <a class="dropdown-item" href="adverts">My adverts</a>
+                        <a class="dropdown-item" href="response">My response</a>
+
+                       <a class="dropdown-item" href="order_history">Orders</a>
+
+                    </div>
+            {% else %}
+            <a class="nav-link" href="index">Login/Register</a>
+            {% endif %}
+                </div>
+        </li>
+
+    </ul>
+</nav>
+<!--carousel-->
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'images/wed1.jpg' %}" class="d-block w-100" alt="...">
+            <div class="tp-mask-wrap" style="position: absolute; display: block; overflow: visible;">
+                <div class="tp-caption   tp-resizeme rs-toggle-content-active" id="slide-5-layer-2" data-x="['left','left','center','center']" data-hoffset="['217','217','5','0']" data-y="['top','top','top','top']" data-voffset="['343','343','117','172']" data-fontsize="['100','100','70','40']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames="[{&quot;delay&quot;:300,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]" data-textalign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 5; white-space: nowrap; font-size: 32px; line-height: 104px; font-weight: 700; color: rgb(255, 255, 255); letter-spacing: 0px; font-family: &quot;Playfair Display&quot;; visibility: inherit; transition: none 0s ease 0s; text-align: inherit; border-width: 0px; margin: 0px; padding: 0px; min-height: 0px; min-width: 0px; max-height: none; max-width: none; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform-origin: 50% 50% 0px;">Wedding Agency </div>
+            </div>
+
+            <div class="carousel-caption d-none d-md-block">
+
+                <h6>Wedding agency</h6>
+                <p style="color:white;">We have designed,planned and coordinated more than 300 weddings only in last 4 years.We provide
+                    the inspiration,the experience,and the integrity to make any event perfectly unique</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/wed5.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h6>Best events</h6>
+                <p style="color:white;">We have designed,planned and coordinated more than 300 weddings only in last 4 years.We provide
+                    the inspiration,the experience,and the integrity to make any event perfectly unique</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/wed.jpg' %}"class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h6>Best Places</h6>
+                <p style="color:white;">We have designed,planned and coordinated more than 300 weddings only in last 4 years.We provide
+                    the inspiration,the experience,and the integrity to make any event perfectly unique</p>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<!--search option place and vendors-->
+<div class="where_togo_area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-3">
+                <div class="form_area">
+                    <h3>Which vendor you need?</h3>
+                </div>
+            </div>
+            <div class="col-lg-8 ">
+                <div class="search_wrap">
+                    <form class="search_form" action="#">
+                        <!--  <div class="input_field">
+                              <input type="text" placeholder="Vendor type">
+                          </div>
+                          <div class="input_field">
+                              <input id="datepicker" placeholder="Date">
+
+                          </div>-->
+
+
+                        <div class="input_field">
+                            <div class="form-group">
+                                <label for="Select1" style="font-size:20px;">Vendor Type</label>
+                                <select class="form-control" id="Select1" name="Select1" >
+                                    <option>Invitations</option>
+                                    <option> Pandit</option>
+                                    <option>Venue</option>
+                                    <option>Decorators</option>
+                                    <option>Catering Services</option>
+                                    <option> Photography</option>
+                                    <option>Make up</option>
+                                    <option>Band</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="input_field">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect2" style="font-size:20px;">Cities</label>
+                                <select class="form-control" id="exampleFormControlSelect2">
+                                    <option>Erode</option>
+                                    <option>Salem</option>
+                                    <option>Chennai</option>
+                                    <option>Coimbatore</option>
+                                    <option>Madurai</option>
+                                    <option>Thirupur</option>
+                                    <option>Tanjore</option>
+                                    <option>Thirunelvelli</option>
+                                    <option>Tuticorin</option>
+                                    <option>Vellore</option>
+
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="input_field">
+                            <div class="form-group">
+                                <label class="typo-" for="exampleFormControlSelect3" style="font-size:20px;">Marriage Type</label>
+                                <select class="form-control" id="exampleFormControlSelect3">
+                                    <option>Hindu</option>
+                                    <option>Muslim</option>
+                                    <option>Christian</option>
+
+                                </select>
+                            </div>
+
+                        </div>
+                        <!--<div class="dropdown" aria-label="Basic example">
+                            <button class="btn btn-info btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Vendor type
+                            </button>
+                            <div class="dropdown-menu dropdown-multicol2" aria-labelledby="dropdownMenuButton">
+                                <div class="dropdown-col">
+                                    <a class="dropdown-item" href="#"> Invitations</a>
+                                    <a class="dropdown-item" href="#"> Pandit</a>
+                                    <a class="dropdown-item" href="venue"> Venue</a>
+                                    <a class="dropdown-item" href="#"> Decorators</a>
+                                </div>
+                                <div class="dropdown-col">
+                                    <a class="dropdown-item" href="#"> Catering services</a>
+                                    <a class="dropdown-item" href="#"> Photography</a>
+                                    <a class="dropdown-item" href="#"> Make up</a>
+                                    <a class="dropdown-item" href="#"> Band</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input_field">
+                        <div class="dropdown" aria-label="Basic example">
+                            <button class="btn btn-info btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                City
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Erode</a>
+                                <a class="dropdown-item" href="#">Salem</a>
+                                <a class="dropdown-item" href="#">Chennai</a>
+                                <a class="dropdown-item" href="#">Coimbatore</a>
+                                <a class="dropdown-item" href="#">Madurai</a>
+                                <a class="dropdown-item" href="#">Trichy</a>
+                                <a class="dropdown-item" href="#">Vellore</a>
+                                <a class="dropdown-item" href="#">Tuticorin</a>
+                                <a class="dropdown-item" href="#">Thirunelveli</a>
+                                <a class="dropdown-item" href="#">Tanjore</a>
+                                <a class="dropdown-item" href="#">Tirupur</a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="input_field">
+                        <div class="dropdown" aria-label="Basic example">
+                            <button class="btn btn-info btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Marriage type
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Hindu</a>
+                                <a class="dropdown-item" href="#">Muslim</a>
+                                <a class="dropdown-item" href="#">Christian</a>
+                            </div>
+                        </div>
+                    </div>-->
+                        <div class="input_field">
+                            <div class="search_btn">
+                                <button class="boxed-btn4 " type="submit" onclick="checkAnswer()"  >Search</button>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+                        <!--
+                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                 Dropdown
+                             </button>
+                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                 <button class="dropdown-item" type="button">Action</button>
+                                 <button class="dropdown-item" type="button">Another action</button>
+                                 <button class="dropdown-item" type="button">Something else here</button>
+                             </div>
+                         </div>
+                        <select>
+                            <option data-display="Travel type">Marriage type</option>
+                            <option value="1">Hindu</option>
+                            <option value="2">Muslim</option>
+                        </select>-->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--box-->
+<div class="popular_destination_area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="section_title text-center mb_70">
+                    <h3>You Dream it , We Care it</h3>
+                    <p>Our passion is your perfect event. Your occasion deserves our careful planning.</p>
+                </div>
+            </div>
+        </div>
+        <h2>Popular searches</h2>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="single_destination">
+                    <div class="thumb">
+                        <img src="{% static 'images/venue/mahal1.jpg' %}" alt="">
+                    </div>
+                    <div class="content">
+                        <p class="d-flex align-items-center">Wedding<a href="venue">Venues</a> </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single_destination">
+                    <div class="thumb">
+                        <img src="{% static 'images/venue/p.jpg' %}" alt="">
+                    </div>
+                    <div class="content">
+                        <p class="d-flex align-items-center">Wedding<a href="pandit">Pandits</a> </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single_destination">
+                    <div class="thumb">
+                        <img src="{% static 'images/venue/invi1.jpg' %}" alt="">
+                    </div>
+                    <div class="content">
+                        <p class="d-flex align-items-center">Wedding<a href="invitation">Invitations</a> </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single_destination">
+                    <div class="thumb">
+                        <img src="{% static 'images/venue/1.jpg' %}" alt="">
+                    </div>
+                    <div class="content">
+                        <p class="d-flex align-items-center">Wedding<a href="decorators">Decorators</a> </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single_destination">
+                    <div class="thumb">
+                        <img src="{% static 'images/venue/cater.jpg' %}" alt="">
+                    </div>
+                    <div class="content">
+                        <p class="d-flex align-items-center">Wedding<a href="catering">Catering</a> </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single_destination">
+                    <div class="thumb">
+                        <img src="{% static 'images/venue/make.jpg' %}" width="100" height="350" alt="">
+                    </div>
+                    <div class="content">
+                        <p class="d-flex align-items-center">Wedding<a href="makeup">Make up</a> </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<div class="padding-v-20 padding-r-20">
+    <div class="typo" style="font-size:26px;">
+        WedMeGood - Your Personal Wedding Planner</div>
+    <p class="small" style="font-size:24px;">Plan your wedding with Us</p>
+    <p class="small" style="font-size:20px;">WedMeGood is an Indian Wedding Planning Website and app where you can find the best wedding vendors, with prices and reviews at the click of a button. Whether you are looking to hire wedding planners in India, or looking for the top photographers, or just some ideas and inspiration for your wedding. WedMeGood can help you solve your wedding planning woes through its unique features. With a checklist, detailed vendor list, inspiration gallery and blog - you won't need to spend hours planning a wedding anymore.</p><div class="prop-bar padding-10 margin-t-10"><div class="prop-item"><span class="isvg loaded margin-r-10"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e72e77;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="_-e-discover___2fLY3gSs" data-name="-e-discover" class="cls-1" d="M76.088,253.721v0.759a1.221,1.221,0,0,1-1.065,1.193l-0.2.69a0.89,0.89,0,0,1-.864.637H72.03a0.89,0.89,0,0,1-.864-0.637l-0.189-.69a1.227,1.227,0,0,1-1.07-1.2v-0.76a0.747,0.747,0,0,1,.764-0.733h4.655A0.755,0.755,0,0,1,76.088,253.721Zm3.585-10.24a6.242,6.242,0,0,1-1.873,4.446,5.783,5.783,0,0,0-1.639,3.188,1.091,1.091,0,0,1-1.093.894H70.926a1.081,1.081,0,0,1-1.087-.888,5.851,5.851,0,0,0-1.65-3.2,6.247,6.247,0,0,1-1.862-4.37A6.677,6.677,0,0,1,79.673,243.481Zm-5.92-3.879A0.739,0.739,0,0,0,73,238.88a4.728,4.728,0,0,0-4.817,4.622,0.753,0.753,0,0,0,1.505,0A3.25,3.25,0,0,1,73,240.325,0.735,0.735,0,0,0,73.753,239.6ZM73,234.975a0.738,0.738,0,0,0,.753-0.722v-2.531a0.753,0.753,0,0,0-1.505,0v2.531A0.738,0.738,0,0,0,73,234.975Zm-8.858,8.5a0.738,0.738,0,0,0-.753-0.722H60.753a0.723,0.723,0,1,0,0,1.444h2.637A0.735,0.735,0,0,0,64.142,243.476Zm21.105-.722H82.611a0.723,0.723,0,1,0,0,1.444h2.637A0.723,0.723,0,1,0,85.247,242.754Zm-19.572,6.735-1.868,1.792a0.7,0.7,0,0,0,0,1.022,0.778,0.778,0,0,0,1.059,0l1.868-1.792a0.7,0.7,0,0,0,0-1.022A0.765,0.765,0,0,0,65.675,249.489ZM79.8,237.676a0.768,0.768,0,0,0,.529-0.208l1.867-1.792a0.7,0.7,0,0,0,0-1.022,0.772,0.772,0,0,0-1.065,0l-1.867,1.792a0.7,0.7,0,0,0,0,1.022A0.781,0.781,0,0,0,79.8,237.676Zm-14.121-.213a0.778,0.778,0,0,0,1.059,0,0.7,0.7,0,0,0,0-1.022l-1.868-1.793a0.774,0.774,0,0,0-1.065,0,0.7,0.7,0,0,0,0,1.022Zm14.65,12.026a0.772,0.772,0,0,0-1.065,0,0.7,0.7,0,0,0,0,1.022l1.867,1.792a0.778,0.778,0,0,0,1.059,0,0.7,0.7,0,0,0,0-1.022Z" transform="translate(-60 -231)"></path>
+</svg>
+</span><span>Discover Wedding Ideas</span></div><br>
+    <div class="prop-item"><span class="isvg loaded margin-r-10"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e72e77;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="_-e-book___m2Tnl7AX" data-name="-e-book" class="cls-1" d="M267.828,246.241a2.69,2.69,0,1,0-2.69-2.689A2.692,2.692,0,0,0,267.828,246.241Zm0-4.482a1.793,1.793,0,1,1-1.793,1.793A1.795,1.795,0,0,1,267.828,241.759ZM275,246.241a2.69,2.69,0,1,0-2.69-2.689A2.693,2.693,0,0,0,275,246.241Zm0-4.482a1.793,1.793,0,1,1-1.793,1.793A1.795,1.795,0,0,1,275,241.759Zm7.172,4.482a2.69,2.69,0,1,0-2.689-2.689A2.692,2.692,0,0,0,282.172,246.241Zm0-4.482a1.793,1.793,0,1,1-1.793,1.793A1.8,1.8,0,0,1,282.172,241.759Zm-14.344,11.655a2.69,2.69,0,1,0-2.69-2.69A2.692,2.692,0,0,0,267.828,253.414Zm0-4.483a1.793,1.793,0,1,1-1.793,1.793A1.795,1.795,0,0,1,267.828,248.931ZM275,253.414a2.69,2.69,0,1,0-2.69-2.69A2.693,2.693,0,0,0,275,253.414Zm0-4.483a1.793,1.793,0,1,1-1.793,1.793A1.795,1.795,0,0,1,275,248.931Zm7.172,4.483a2.69,2.69,0,1,0-2.689-2.69A2.692,2.692,0,0,0,282.172,253.414ZM273.655,231a0.449,0.449,0,0,0,0,.9,1.343,1.343,0,0,1,1.263.9h0.933A2.246,2.246,0,0,0,273.655,231Zm2.69,0a0.449,0.449,0,0,0,0,.9,1.341,1.341,0,0,1,1.262.9h0.934A2.246,2.246,0,0,0,276.345,231Zm2.69,0a0.449,0.449,0,1,0,0,.9,1.342,1.342,0,0,1,1.262.9h0.934A2.247,2.247,0,0,0,279.035,231Zm2.2,1.793a2.284,2.284,0,0,1,.045.448,2.245,2.245,0,0,1-2.241,2.242,0.449,0.449,0,1,1,0-.9,1.333,1.333,0,0,0,1.262-1.793h-1.756a2.284,2.284,0,0,1,.045.448,2.244,2.244,0,0,1-2.241,2.242,0.449,0.449,0,0,1,0-.9,1.33,1.33,0,0,0,1.262-1.793h-1.756a2.211,2.211,0,0,1,.046.448,2.245,2.245,0,0,1-2.242,2.242,0.449,0.449,0,0,1,0-.9,1.333,1.333,0,0,0,1.263-1.793h-1.756a2.284,2.284,0,0,1,.045.448,2.245,2.245,0,0,1-2.242,2.242,0.449,0.449,0,0,1,0-.9,1.333,1.333,0,0,0,1.263-1.793H269.7a1.337,1.337,0,0,1,2.525,0h0.934a2.242,2.242,0,0,0-4.393,0H262V257h26V232.793h-6.769ZM287.1,256.1H262.9V238.621H287.1V256.1Z" transform="translate(-262 -231)"></path>
+</svg>
+</span><span>Book Trusted Vendors</span></div><br><div class="prop-item"><span class="isvg loaded margin-r-10"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="26" viewBox="0 0 30 26">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e72e77;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="_-e-organised___VnhgZ9DY" data-name="-e-organised" class="cls-1" d="M475.7,238.816h-2.059a0.736,0.736,0,1,0,0,1.472H475.7A0.736,0.736,0,1,0,475.7,238.816Zm3.219,1.472h6.75a0.736,0.736,0,1,0,0-1.472h-6.75A0.736,0.736,0,1,0,478.923,240.288Zm-3.219,2.976h-2.059a0.736,0.736,0,1,0,0,1.472H475.7A0.736,0.736,0,1,0,475.7,243.264Zm3.219,1.472h6.75a0.736,0.736,0,1,0,0-1.472h-6.75A0.736,0.736,0,1,0,478.923,244.736Zm-3.219,2.976h-2.059a0.736,0.736,0,1,0,0,1.472H475.7A0.736,0.736,0,1,0,475.7,247.712Zm10.719,0.736a0.743,0.743,0,0,0-.75-0.736h-6.75a0.736,0.736,0,1,0,0,1.472h6.75A0.744,0.744,0,0,0,486.423,248.448Zm5.895-2.058V231.736a0.742,0.742,0,0,0-.749-0.736H467.75a0.743,0.743,0,0,0-.75.736v24.528a0.743,0.743,0,0,0,.75.736h23.819A5.325,5.325,0,0,0,492.318,246.39ZM468.5,255.528V232.472h22.32v13.917a5.308,5.308,0,0,0-2.994,9.139H468.5Zm23.07,0a3.86,3.86,0,1,1,3.932-3.859A3.9,3.9,0,0,1,491.569,255.528Zm2.323-5.731a0.757,0.757,0,0,0-1.029.248l-1.471,2.387-1.14-.988a0.761,0.761,0,0,0-1.059.065,0.727,0.727,0,0,0,.066,1.039l1.814,1.57a0.758,0.758,0,0,0,1.137-.171l1.936-3.14A0.727,0.727,0,0,0,493.892,249.8Z" transform="translate(-467 -231)"></path>
+</svg>
+</span><span>Always Stay Organised</span></div></div></div>   </div>
+</div>
+<!----------- Footer ------------>
+<footer class="footer-bs">
+    <div class="row">
+        <div class="col-md-4 footer-brand animated fadeInLeft">
+            <a class="footer-brand" href="home" >
+                <img src="{% static 'images/venue/new1.png' %}" width="200" height="100" alt="logo">
+            </a>
+            <p>We are a full-service wedding and event planning company dedicated to once-in-a-lifetime celebrations. Let I Do… make your vision a reality. </p>
+            <p>© 2020 Copyright | Three Knots | All rights reserved</p>
+        </div>
+        <div class="col-md-2 footer-nav animated fadeInUp">
+            <h4>Vendors</h4>
+            <div class="col-md-3">
+                <ul class="pages">
+                    <li><a href="venue">Venue</a></li>
+                    <li><a href="#">Invitation</a></li>
+                    <li><a href="#">Pandit</a></li>
+                    <li><a href="#">Decorators</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <ul class="pages">
+                    <li><a href="#">Photography</a></li>
+                    <li><a href="#">Invitation</a></li>
+                    <li><a href="#">Band</a></li>
+                    <li><a href="#">Make_Up</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3 footer-nav animated fadeInUp">
+            <div class="col-md-3">
+                <ul class="list">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Terms & Condition</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-2 footer-social animated fadeInDown">
+            <h4>Follow Us</h4>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Google</a></li>
+            </ul>
+        </div>
+
+    </div>
+</footer>
+
+
+
+
+{% block content%}
+{% endblock %}
+</body>
+</html>

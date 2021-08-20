@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<head>
+    <style>
+    .signup-form
+ {
+ padding-left:1px;
+ }
+ .form-title
+{
+color:black;
+  font-family:  "Rubik", sans-serif;
+  }
+.ven{
+font-size:16px;
+}
+.input-group
+{
+padding-left:10px;
+}
+.name {
+  font-size: 14px;
+  color: #333;
+  padding-top: 15px;
+}
+.choose::-webkit-file-upload-button {
+  color: white;
+  display: inline-block;
+  background: #d9534f;
+  border: none;
+  padding: 7px 15px;
+  font-weight: 700;
+  border-radius: 3px;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 10pt;
+}
+.main{
+  /* The image used */
+  background-image: url( "{% static 'images/b7.jpg' %}");
+  background-color: #cccccc;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  }
+</style>
+</head>
+<body>
+
+
+<div class="main">
+    <section class="signup" id="top">
+        <div class="container" style="border:3px solid #d9534f;">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title">Fill the Catering details</h2>
+                    <form method="POST" class="rform" id="rform"  enctype="multipart/form-data">
+                    {% csrf_token %}
+                        <input type="hidden" name="customerid"  value={{user.id}}>
+                        <input type="hidden" name="vendortype"  value=Catering>
+                        <input type="hidden" name="status"  value=0>
+                        <div class="form-group">
+
+                            <label> <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+                            </label>
+                            <span class="ven">Name:</span> <input type="text" name="name" id="venue" placeholder="Enter your caters name">
+
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <span class="ven">Address of the shop:</span> <label><path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z"></path>
+                            <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z"></path>
+                        </label><input type="text" name="address" id="venue2" placeholder="Enter your address">
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <span class="ven">Contact number:</span> <label><path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z"></path>
+                            <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z"></path>
+                        </label><input type="text" name="number" id="venue4" placeholder="Enter your number">
+
+                        </div>
+                        <div class="form-group">
+                            <span class="ven">Food type:</span><br/><br/>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input type="checkbox" name="catertype[]" value="veg" class="custom-control-input" id="defaultInline9">
+                                <label class="custom-control-label" for="defaultInline9">Veg</label></div><br/>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input type="checkbox" name="catertype[]" value="nonveg" class="custom-control-input" id="defaultInline10">
+                                <label class="custom-control-label" for="defaultInline10">Non-Veg</label></div><br/>
+
+
+
+                        </div>
+                        <div class="form-group">
+                            <span class="ven">Food Style:</span><br/><br/>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input type="checkbox" name="caterstyle[]" value="Indian" class="custom-control-input" id="defaultInline1">
+                                <label class="custom-control-label" for="defaultInline1">Indian</label></div><br/>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input type="checkbox" name="caterstyle[]" value="Chinese"  class="custom-control-input" id="defaultInline2">
+                                <label class="custom-control-label" for="defaultInline2">Chinese</label></div><br/>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input type="checkbox" name="caterstyle[]" value="northIndian" class="custom-control-input" id="defaultInline3">
+                                <label class="custom-control-label" for="defaultInline3">North Indian</label></div><br/>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input type="checkbox" name="caterstyle[]" value="others" class="custom-control-input" id="defaultInline4">
+                                <label class="custom-control-label" for="defaultInline4">Others</label></div><br/>
+                             <label><path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z"></path>
+                            <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z"></path>
+                        </label><input type="text" name="otherstyle" id="venue5" placeholder="Enter other food styles">
+
+                        </div>
+                        <div class="form-group">
+                            <span class="ven">Standard packages includes</span><br/><br/>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input type="checkbox" name="package[]" value="starters" class="custom-control-input" id="defaultInline5">
+                                <label class="custom-control-label" for="defaultInline5">Starters</label></div><br/>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input type="checkbox" name="package[]" value="soups" class="custom-control-input" id="defaultInline26">
+                                <label class="custom-control-label" for="defaultInline26">Soups</label></div><br/>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input type="checkbox" name="package[]" value="maincourse"  class="custom-control-input" id="defaultInline7">
+                                <label class="custom-control-label" for="defaultInline7">Main course</label></div><br/>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input type="checkbox" name="package[]" value="Desserts"  class="custom-control-input" id="defaultInline8">
+                                <label class="custom-control-label" for="defaultInline8">Desserts</label></div><br/>
+                            <div class="custom-control custom-checkbox custom-control-inline">
+                                <input type="checkbox" name="package[]" value="others" class="custom-control-input" id="defaultInline21">
+                                <label class="custom-control-label" for="defaultInline21">Others</label></div><br/>
+                             <label><path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z"></path>
+                            <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z"></path>
+                        </label><input type="text" name="others" id="venue6" placeholder="Enter other packages">
+
+
+                        </div>
+                        <div class="form-group">
+                            <span class="ven">About your Caters:</span><label for="exampleFormControlTextarea1"></label>
+                            <textarea class="form-control" name="about" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <span class="ven">Upload Sample files</span>
+                            <input type="file" name="image" class="choose">
+
+                        </div>
+                        <div class="form-group form-button">
+                            <input type="submit" name="signup" id="signup" class="form-submit" value="Submit"/>
+                        </div>
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Sign up form <span class="border border-danger">-->
+
+{% endblock %}
+</body>
+</html>

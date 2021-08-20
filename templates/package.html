@@ -1,0 +1,455 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<head>
+    <style>
+.container-fluid
+{
+margin-top:10px;
+}
+/* Since positioning the image, we need to help out the caption */
+
+
+/* Declare heights because of positioning of img element */
+
+
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Pad the edges of the mobile views a bit */
+.marketing {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.marketing h2 {
+  font-weight: normal;
+  font-family: "Rubik", sans-serif;
+  color:solid black;
+}
+.marketing .col-lg-4 p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.h3
+{
+font-family: "Rubik", sans-serif;
+  color:solid black;
+
+
+  }
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+
+}
+
+.featurette {
+  padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+  overflow: hidden;
+   margin-left:10px;/* Vertically center images part 2: clear their floats. */
+}
+.featurette-image {
+  margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+}
+
+/* Give some space on the sides of the floated elements so text doesn't run right into it. */
+.featurette-image.pull-left {
+  margin-right: 40px;
+}
+.featurette-image.pull-right {
+  margin-left: 40px;
+}
+.lea
+{
+font-size:26px;
+ font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+  font-family: "Rubik", sans-serif;
+  font-color:solid black;
+}
+.sli
+{
+ height:650px;
+ width:100%;
+ }
+ .shadow
+{
+    display:block;
+    position:relative;
+}
+
+.shadow img
+{
+    display:block;
+}
+
+.shadow::before
+{
+    display:block;
+    content:'';
+    position:absolute;
+
+    -moz-box-shadow:inset 0px 0px 5px 2px rgba(0,0,0,0.2);
+    -webkit-box-shadow:inset 0px 0px 5px 2px rgba(0,0,0,0.2);
+    box-shadow:inset 0px 0px 5px 2px rgba(0,0,0,0.2);
+}
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+  font-family: "Rubik", sans-serif;
+  font-color:solid black;
+}
+.but
+{
+width:200px;
+}
+.text
+{
+font-size: 26px;
+
+  line-height: 1;
+  letter-spacing: -1px;
+  font-family: "Rubik", sans-serif;
+
+}
+
+
+.rounded-circle
+{
+height:250px;
+width:250px;
+
+}
+.la
+{
+margin-left:19rem;
+}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+  /* Remve the edge padding needed for mobile */
+  .marketing {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Navbar positioning foo */
+.sol
+{
+margin-left:120px;
+
+
+}
+
+.tab
+{
+margin-right:5px;
+}
+.dol
+{
+padding-left:150px
+}
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+}
+        </style>
+</head>
+<body>
+<div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-2" data-slide-to="1"></li>
+        <li data-target="#carousel-example-2" data-slide-to="2"></li>
+    </ol>
+    <!--/.Indicators-->
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+            <div class="view">
+                <img class="d-block w-100 sli" src="{% static 'images/venue/pack1.jpg' %}"
+                     alt="First slide">
+                <div class="mask rgba-black-light"></div>
+            </div>
+            <div class="carousel-caption">
+                <h3 class="h3-responsive">Gold Package</h3>
+
+            </div>
+        </div>
+        <div class="carousel-item">
+            <!--Mask color-->
+            <div class="view">
+                <img class="d-block w-100 sli" src="{% static 'images/venue/pack4.jpg' %}"
+                     alt="Second slide">
+                <div class="mask rgba-black-strong"></div>
+            </div>
+            <div class="carousel-caption">
+                <h3 class="h3-responsive">Silver Package</h3>
+                <p></p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <!--Mask color-->
+            <div class="view">
+                <img class="d-block w-100 sli" src="{% static 'images/venue/pack3.jpg' %}"
+                     alt="Third slide">
+                <div class="mask rgba-black-slight"></div>
+            </div>
+            <div class="carousel-caption">
+                <h3 class="h3-responsive">Platinum Package</h3>
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <!--/.Slides-->
+    <!--Controls-->
+    <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+    <!--/.Controls-->
+</div>
+<!--/.Carousel Wrapper--><!-- /.carousel -->
+
+
+<!-- Marketing messaging and featurettes
+================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container-fluid marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+        <div class="col-md-3 text-center sol">
+            <a class="shadow rounded-circle text-center"> <img class="rounded-circle text-center " alt="100x100" src="{% static 'images/venue/gold.png' %}"
+                                                               data-holder-rendered="true"></a><br/>
+            <div class="text-center"><h3 class="tab " style="color:#d4af37;">Gold Package</h3>
+                <p>Decor,photography,cater,venue with invitation etc are available.</p>
+                <p><a class="btn btn-default" href="goldpackage">View details »</a></p></div>
+
+        </div>
+        <div class="col-md-4 text-center dol">
+            <a class="shadow rounded-circle text-center"> <img class="rounded-circle text-center " alt="100x100" src="{% static 'images/venue/silver.png' %}"
+                                                               data-holder-rendered="true"></a><br/>
+            <h3 style="color:#d4af37;">Silver Package</h3>
+            <p>Silver package decor,special make up,catering and all wedding package are available.</p>
+            <p><a class="btn btn-default" href="silverpackage">View details »</a></p>
+
+        </div>
+        <div class="col-md-4 text-center dol">
+            <a class="shadow rounded-circle text-center"> <img class="rounded-circle text-center " alt="100x100" src="{% static 'images/venue/plat.jpg' %}"
+                                                               data-holder-rendered="true"></a><br/>
+            <h3 style="color:#d4af37;">Platinum Package</h3>
+            <p>Platinum package special decor and all wedding with extra amenities are available.</p>
+            <p><a class="btn btn-default" href="platinumpackage">View details »</a></p>
+
+        </div>
+    </div><!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="featurette">
+        <img class="featurette-image rounded-circle pull-right" src="{% static 'images/venue/pack1.jpg' %}">
+        <h3  class="featurette-heading"  style="color:solid black;">Gold Package<br/></h3> <span class="text" style="color:red;"> Package price is ₹ 2 Lakhs plus GST</span><br/>
+        <br/><p class="lead" >Gold package will work with you to create a concept for your wedding that starts from your invitations right through to your reception venue. We will locate all the special services and products required for your consideration and take care of all booking requirements.
+    </p><br/> <span class="lead">Inclusions:</span>
+        <ul class="lead list-unstyled">
+            <li>&#9642; Gold package Decor</li>
+            <li>&#9642; Photography</li>
+            <li>&#9642; Site inspection by Nightingales to confirmed venue locations</li>
+            <li>&#9642; Sourcing of all wedding suppliers required e.g. photographer, videographer, entertainment, AV, transport, stationary, cake  etc.</li>
+            <li>&#9642; Bridal Makeup</li>
+            <li>&#9642; Band</li>
+            <li>&#9642; Digital Invitation</li>
+            <li>&#9642; Catering Services</li>
+            <li>&#9642; Budget management</li>
+            <li>&#9642; Timelines and setting dates</li>
+
+
+        </ul><br/>
+
+    </div>
+    <hr class="featurette-divider">
+
+    <div class="featurette">
+        <img class="featurette-image rounded-circle pull-left" src="{% static 'images/venue/pack4.jpg' %}">
+        <h3 class="featurette-heading" style="color:solid black;">Silver Package<br/></h3> <span class="text" style="color:red;"> Package price is ₹4.5 Lakhs plus GST</span><br/><br/>
+        <p class="lead">Silver package is a combination of the ‘Styling and Decorative Package’ partnered with the ‘Wedding Day Silver Package’ which is </p>
+        <p class="lead la"> an efficient combination for couples that require us to assist them with all the decorative and styling elements of the wedding .</p></div>
+    <br/> <div class="la"><span class="lead">Inclusions:</span>
+    <ul class="lead list-unstyled">
+        <li>&#9642; Silver package Decor</li>
+        <li>&#9642; Transportation</li>
+        <li>&#9642; Contract Review & Negotiation</li>
+        <li>&#9642; Rehearsal Coordination</li>
+        <li>&#9642; Event Timeline</li>
+        <li>&#9642; Budgeting</li>
+        <li>&#9642; Photography/Videography</li>
+        <li>&#9642; Wedding Cinematography *</li>
+        <li>&#9642; Delivery and set-up of all wedding day items</li>
+        <li>&#9642; Follow up with Vendors</li>
+        <li>&#9642; Sourcing of all wedding suppliers required e.g. photographer, videographer, entertainment, AV, transport, stationary, cake  etc.</li>
+        <li>&#9642; Bridal Makeup</li>
+        <li>&#9642; Band</li>
+        <li>&#9642; Digital Invitation</li>
+        <li>&#9642; Catering Services</li>
+
+
+
+    </ul></div><br/>
+    <hr class="featurette-divider">
+
+    <div class="featurette">
+        <img class="featurette-image rounded-circle pull-right" src="{% static 'images/venue/pack3.jpg' %}">
+        <h3 class="featurette-heading" style="color:solid black;">Platinum Package<br/></h3> <span class="text" style="color:red;"> Package price is ₹9.5 Lakhs plus GST</span><br/><br/>
+        <p class="lead">Platinum Package will locate all the special services and products required for your consideration and take care of all booking requirements. Plus you have the time saving benefit of only one person to contact for ALL aspects of your wedding!</p>
+        <br/> <span class="lead">Inclusions:</span>
+        <ul class="lead list-unstyled">
+            <li>&#9642; Platinum special package Decor</li>
+            <li>&#9642; Wedding Concept & Design(ThemeDecoration)</li>
+            <li>&#9642; Venue Selection</li>
+            <li>&#9642; Catering and Menu Selection</li>
+            <li>&#9642; Music and Entertainment</li>
+            <li>&#9642; Officiate</li>
+            <li>&#9642; Photography/Videography</li>
+            <li>&#9642; Staging and Audio/Visual</li>
+            <li>&#9642; Delivery and set-up of all wedding day items</li>
+            <li>&#9642; Lighting Design</li>
+            <li>&#9642; Invitations & Guest Management </li>
+            <li>&#9642; Bridal Makeup</li>
+            <li>&#9642; Trousseau & Personal Shopping</li>
+            <li>&#9642; Digital Invitation</li>
+            <li>&#9642; Catering Services</li>
+            <br/><br/>
+            <p class="lea text-center">You will be guided through wedding etiquette, design concepts, themes, and traditions , supplier selection, venue selection, budget planning and much much more, allowing you to relax and enjoy the build up to your wedding, safe in the knowledge that you have everything you need for your dream day, and importantly, remain <b>within budget</b>.
+            </p>
+
+
+        </ul><br/> <button type="button"  class="btn but btn-primary btn-sm btn-radius" data-toggle="modal" data-target="#exampleModal3">Get Quotation</button><br/>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel3">Request a Quote</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST" class="rform" id="rform" enctype="multipart/form-data">
+
+                            {% csrf_token %}
+                            <input type="hidden" name="vendortyp" value="package">
+
+
+                            <div class="text-left">
+
+                                <p class="desc"> Package</p>
+                            </div>
+                            <hr>
+                            <ul id="progressbar" class="text-center">
+                                <li class="active step0" id="step1"></li>
+                                <li class="step0" id="step2"></li>
+                                <li class="step0" id="step3"></li>
+                                <li class="step0" id="step4"></li>
+                            </ul>
+                            <fieldset class="show">
+                                <div class="form-card">
+
+                                    <input type="hidden" name="customeri"  value={{user.id}}>
+                                    <input type="hidden" name="vendortyp"  value=package>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text bg-danger" for="inputGroupSelect01">Options</label>
+                                        </div>
+                                        <select class="custom-select" name=type id="inputGroupSelect01">
+                                            <option selected disabled="true">Choose...</option>
+                                            <option >Gold Package</option>
+                                            <option >Silver Package</option>
+                                            <option >Platinum package</option>
+
+                                        </select>
+                                    </div>
+                                    <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
+                                        <h5 class="sub-heading ">Select the marriage dates<span class=" sub-heading text-danger">* Required</span> </h5><br/>
+                                        <h3 >From</h3><input type="date" id="date1" name="fdate" placeholder="" class="form-control" ><br/>
+                                        <h3 >Till</h3> <input type="date" id="date2" name="ldate" placeholder="" class="form-control" >
+
+
+                                    </div>
+                                    <h5 class="sub-heading ">Personal Details <span class=" sub-heading text-danger">* Required</span> </h5>
+                                    <div class="form-group"> <span class="form-control-label text-right">First Name * :</span>
+                                        <input type="text" id="fname" name="fname" placeholder="" class="form-control" > </div>
+                                    <div class="form-group"> <span class="form-control-label">Last Name * :</span> <input type="text" id="lname" name="lname" placeholder="" class="form-control" > </div>
+                                    <div class="form-group"> <span class="form-control-label">Email ID * :</span> <input type="text" id="email" name="email" placeholder="" class="form-control" > </div>
+                                    <div class="form-group"> <span class="form-control-label">Contact No. * :</span> <input type="text" id="mob" name="mob" placeholder="" class="form-control"> </div>
+                                    <img class="fit-image check-img" src="https://i.imgur.com/QH6Zd6Y.gif"> </div>
+
+
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Submit"/>
+
+
+
+
+
+
+
+                            </fieldset>
+
+
+
+
+
+
+
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div></div>
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+
+    <!-- FOOTER -->
+
+
+    <!-- /.container -->
+    {% endblock %}
+</body>
